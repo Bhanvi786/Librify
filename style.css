@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 section{
@@ -55,3 +55,55 @@ section nav .social_icon i:hover{
     color: #089da1;
     cursor: pointer;
 }
+section .main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+}
+
+section .main h1{
+    position: relative;
+    top: 20px;
+    left: 25px;
+    font-size: 55px;
+    font-weight: 700;
+    color: #111;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+section .main h1 span{
+    color: #089da1;
+    font-weight: 700;
+}
+
+section .main p{
+    width: 650px;
+    text-align: justify;
+    position: relative;
+    top: 40px;
+    left: 25px;
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section .main .main_tag .main_btn{
+    background: #089da1;
+    padding: 10px 20px;
+    position: relative;
+    top: 100px;
+    left: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+
+section .main .main_img img{
+    width: 500px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
