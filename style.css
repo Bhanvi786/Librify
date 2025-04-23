@@ -11,17 +11,20 @@ section{
     background-image: url(Images/bg.png);
     background-size: cover;
     background-position: center;
+    color: #fff;
 }
 section nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0 0 10px #089da1;
-    background: #fff;
+    padding: 15px 40px;  
+    background: #2c3e50;
     position: fixed;
     left: 0;
     z-index: 100;
+padding: 15px 50px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 section nav .logo img{
@@ -40,7 +43,7 @@ section nav li{
 
 section nav li a{
     text-decoration: none;
-    color: #000;
+    color:  #ffffff;
 }
 
 section nav li a:hover{
