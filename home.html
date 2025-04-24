@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <section>
+
+        <nav>
+
+            <div class="logo">
+                <img src="Images/logo.png">
+            </div>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Featured">Featured</a></li>
+                <li><a href="#Arrivals">Arrivals</a></li>
+                <li><a href="#Reviews">Reviews</a></li>
+                <li><a href="#Blog">Blog</a></li>
+            </ul>
+            <div class="social_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+                <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+        <div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLogin">&times;</span>
+        <h2>Welcome</h2>
+        <p>To access account and manage orders</p>
+        <button class="login-signup-btn">LOGIN / SIGNUP</button>
+        <hr>
+        <!-- THIS IS THE CRUCIAL PART: -->
+        <ul class="login-list">
+            <li>Orders</li>
+            <li>Wishlist</li>
+            <li>Gift Cards<span class="new-badge">New</span></li>
+            <li>Contact Us</li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="main">
+
+            <div class="main_tag">
+                <h1>WELCOME TO<br><span>THE BOOK STORE</span></h1>
+
+                <p>
+                    Discover a world of stories within our curated collection of bestselling titles, timeless classics, and hidden literary treasures. Whether you're a lifelong book lover or just beginning your reading journey, there's always something new and inspiring waiting to be explored!
+                </p>
+                <a href="#" class="main_btn">Learn More</a>
+
+            </div>
+            <div class="main_img">
+                <img src="Images/table.png">
+            </div>
+
+        </div>
+
+    </section>
+
+<div class="features-strip">
+  <div class="feature-item">
+    <i class="fas fa-truck"></i>
+    <span>Free Delivery</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-money-bill-wave"></i>
+    <span>Cash on Delivery</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-certificate"></i>
+    <span>Original Products</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-retweet"></i>
+    <span>Easy Replacement</span>
+  </div>
+</div>
+
+    <div class="deals-row">
+        <div class="deals-timer-card">
+            <div class="timer">
+                <div>
+                    <span class="time-val" id="hours">03</span>
+                    <span class="time-label">Hrs</span>
+                </div>
+                <div>
+                    <span class="time-val" id="minutes">28</span>
+                    <span class="time-label">Mins</span>
+                </div>
+                <div>
+                    <span class="time-val" id="seconds">03</span>
+                    <span class="time-label">Secs</span>
+                </div>
+            </div>
+            <div class="deals-info">
+                <h3>Deals for the Week</h3>
+                <p>
+                    Here are some of our handpicked titles offered at a special price for a limited period.<br>
+                    Hurry the deals run out soon.
+                </p>
+            </div>
+        </div>
+        <div class="deal-books-row">
+            <div class="deal-book-card">
+                <img src="book1.jpg" alt="Book 1" class="deal-book-img">
+                <div class="deal-book-title">The Infinite Library</div>
+                <div class="deal-book-author">by Jane Doe</div>
+                <div class="deal-book-pricing">
+                    <span class="deal-book-price">₹349</span>
+                    <span class="deal-book-old-price">₹499</span>
+                    <span class="deal-book-discount">(30% Off)</span>
+                </div>
+            </div>
+            <div class="deal-book-card">
+                <img src="book2.jpg" alt="Book 2" class="deal-book-img">
+                <div class="deal-book-title">Lost in Pages</div>
+                <div class="deal-book-author">by John Smith</div>
+                <div class="deal-book-pricing">
+                    <span class="deal-book-price">₹279</span>
+                    <span class="deal-book-old-price">₹399</span>
+                    <span class="deal-book-discount">(30% Off)</span>
+                </div>
+            </div>
+            <div class="deal-book-card">
+                <img src="book3.jpg" alt="Book 3" class="deal-book-img">
+                <div class="deal-book-title">Mystery of Words</div>
+                <div class="deal-book-author">by Emily Clark</div>
+                <div class="deal-book-pricing">
+                    <span class="deal-book-price">₹199</span>
+                    <span class="deal-book-old-price">₹299</span>
+                    <span class="deal-book-discount">(33% Off)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="1.js"></script>
+</body>
+</html>

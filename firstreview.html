@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>Review page</title>
+    </head>
+    <body >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            /* Global Review Section Styling */
+            body {
+            background-image: url(bg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+.reviews {
+    width: 100%;
+    padding: 60px 20px;
+    background: url(abcd.jpg) no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Heading */
+.reviews h1 {
+    text-align: center;
+    font-size: 42px;
+    color: #344e41;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Reviews Wrapper */
+.review_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Each Review Card */
+.review_card {
+    background: #EFD3D6;
+    width: 300px;
+    padding: 25px 20px;
+    border-radius: 24px;
+    box-shadow: 0 12px 24px rgba(183, 208, 212, 0.2);
+    position: relative;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.review_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(183, 208, 212, 0.3);
+}
+
+/* Reviewer Image */
+.card_top img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #bcb8b1;
+    margin-bottom: 14px;
+}
+
+/* Decorative Quote Icon */
+.quote-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    color: #d6ccc2;
+}
+
+/* Reviewer Name */
+.card_content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #344e41;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.card_content p {
+    font-size: 14px;
+    color: #5f7161;
+    line-height: 1.6;
+}
+
+/* Stars */
+.review_icon {
+    margin-top: 14px;
+}
+
+.review_icon i {
+    font-size: 18px;
+    margin: 0 2px;
+    color: #ffb5a7;
+    transition: transform 0.3s;
+}
+
+.review_icon i:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .review_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+        </style>
+<div class="reviews">
+    <h1>What People Say</h1>
+    <div class="review_box">
+
+        <!-- Review 1 -->
+        <div class="review_card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="card_top">
+                <img src="review2.webp" alt="Reviewer" onerror="this.src='https://via.placeholder.com/70'">
+            </div>
+            <div class="card_content">
+                <h2>Riya</h2>
+                <p>Prices are reasonable, and the store often has special offers or sales that make it even easier to pick up your next favorite read.</p>
+                <div class="review_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review_card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="card_top">
+                <img src="review3.jpg" alt="Reviewer" onerror="this.src='https://via.placeholder.com/70'">
+            </div>
+            <div class="card_content">
+                <h2>Rahul </h2>
+                <p>The selection is amazing! Whether you’re looking for the latest bestseller or a rare find, they’ve got it. I also appreciate their recommendation system, which always suggests books I end up loving.
+                </p>
+                <div class="review_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review_card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="card_top">
+                <img src="review4.jpg" alt="Reviewer" onerror="this.src='https://via.placeholder.com/70'">
+            </div>
+            <div class="card_content">
+                <h2>Mark</h2>
+                <p>Great experience overall, although there was a small delay in delivery.</p>
+                <div class="review_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review_card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div class="card_top">
+                <img src="review1.avif" alt="Reviewer" onerror="this.src='https://via.placeholder.com/70'">
+            </div>
+            <div class="card_content">
+                <h2>Sophia Lee</h2>
+                <p>Very friendly and professional. The results exceeded my expectations!</p>
+                <div class="review_icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>
