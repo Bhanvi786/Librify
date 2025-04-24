@@ -7,7 +7,7 @@
 
 section{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-image: url(Images/bg.png);
     background-size: cover;
     background-position: center;
@@ -234,3 +234,32 @@ section .main .main_img img{
     color: #2dbf4e;
     font-size: 0.96rem;
 }
+.features-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #089da1;
+    padding: 20px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  
+  .feature-item i {
+    font-size: 1.4rem;
+  }
+  
+  .feature-divider {
+    height: 30px;
+    border-left: 1px dotted #ffffffa1;
+  }
+  
