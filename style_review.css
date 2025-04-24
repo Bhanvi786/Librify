@@ -68,3 +68,29 @@ quote-icon {
     color: #5f7161;
     line-height: 1.6;
 }
+
+
+/* Stars */
+.review_icon {
+    margin-top: 14px;
+}
+
+.review_icon i {
+    font-size: 18px;
+    margin: 0 2px;
+    color: #ffb5a7;
+    transition: transform 0.3s;
+}
+
+.review_icon i:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .review_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
