@@ -1,35 +1,53 @@
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeLogin = document.getElementById('closeLogin');
 
-  const totalSeconds = 3 * 3600 + 28 * 60 + 3; 
-  let remaining = totalSeconds;
+// Open modal when user icon is clicked
+loginBtn.onclick = function(e) {
+  e.preventDefault();
+  loginModal.style.display = "block";
+}
 
-  function updateTimer() {
-    const hours = Math.floor(remaining / 3600);
-    const minutes = Math.floor((remaining % 3600) / 60);
-    const seconds = remaining % 60;
+// Close modal when close (×) is clicked
+closeLogin.onclick = function() {
+  loginModal.style.display = "none";
+}
 
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-    if (remaining > 0) {
-      remaining--;
-    } else {
-      clearInterval(timerInterval);
-    }
+// Close modal when clicking outside modal content
+window.onclick = function(event) {
+  if (event.target === loginModal) {
+    loginModal.style.display = "none";
   }
-  updateTimer();
-  const timerInterval = setInterval(updateTimer, 1000);
+}
 
-  const loginBtn = document.getElementById('loginBtn');
-  const loginModal = document.getElementById('loginModal');
-  const closeLogin = document.getElementById('closeLogin');
+  // Open popup
+document.getElementById('couponTrigger').onclick = function() {
+  document.getElementById('couponPopup').classList.add('open');
+  document.getElementById('couponTrigger').style.display = 'none';
+};
 
-  loginBtn.onclick = function() {
-      loginModal.style.display = "block";
+// Close popup by vertical tab arrow
+document.querySelector('.coupon-popup-vertical').onclick = function() {
+  document.getElementById('couponPopup').classList.remove('open');
+  document.getElementById('couponTrigger').style.display = 'flex';
+  // Also close modal if open
+  document.getElementById('couponModal').classList.remove('open');
+};
+
+// Show coupon modal
+// document.getElementById('showCouponBtn').onclick = function(e) {
+//   e.stopPropagation();
+//   document.getElementById('couponModal').classList.add('open');
+// };
+
+// Close modal by button
+document.getElementById('closeModalBtn').onclick = function() {
+  document.getElementById('couponModal').classList.remove('open');
+};
+
+// Close modal by clicking outside
+document.getElementById('couponModal').onclick = function(event) {
+  if (event.target === this) {
+    this.classList.remove('open');
   }
-
-  closeLogin.onclick = function() {
-      loginModal.style.display = "none";
-  }
-
-  
+};
