@@ -204,5 +204,35 @@
 </div>
 
 </div>
+
+<form class="review-form" id="reviewForm" novalidate>
+    <h2>Submit Your Review</h2>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <div class="error-message" id="emailError">Please enter a valid email.</div>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required minlength="3" />
+    <div class="error-message" id="usernameError">Please enter your username (at least 3 characters).</div>
+
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" required minlength="10"></textarea>
+    <div class="error-message" id="reviewError">Please enter your review (at least 10 characters).</div>
+
+    <label for="rating">Star Rating:</label>
+    <select id="rating" name="rating" required>
+        <option value="">Select rating</option>
+        <option value="5">★★★★★ (5 stars)</option>
+        <option value="4">★★★★ (4 stars)</option>
+        <option value="3">★★★ (3 stars)</option>
+        <option value="2">★★ (2 stars)</option>
+        <option value="1">★ (1 star)</option>
+    </select>
+    <div class="error-message" id="ratingError">Please select a star rating.</div>
+
+    <button type="submit">Submit Review</button>
+</form>
+
     </body>
 </html>

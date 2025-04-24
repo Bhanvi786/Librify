@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        form.review-form {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        form.review-form label {
+            font-weight: 600;
+            color: #344e41;
+        }
+        form.review-form input[type="text"],
+        form.review-form input[type="email"],
+        form.review-form textarea,
+        form.review-form select {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        form.review-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        form.review-form button {
+            background-color: #344e41;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+        form.review-form button:hover {
+            background-color: #2a3a2f;
+        }
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="review-form" id="reviewForm" novalidate>
+        <h2>Submit Your Review</h2>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <div class="error-message" id="emailError">Please enter a valid email.</div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required minlength="3" />
+        <div class="error-message" id="usernameError">Please enter your username (at least 3 characters).</div>
+
+        <label for="review">Review:</label>
+        <textarea id="review" name="review" required minlength="10"></textarea>
+        <div class="error-message" id="reviewError">Please enter your review (at least 10 characters).</div>
+
+        <label for="rating">Star Rating:</label>
+        <select id="rating" name="rating" required>
+            <option value="">Select rating</option>
+            <option value="5">★★★★★ (5 stars)</option>
+            <option value="4">★★★★ (4 stars)</option>
+            <option value="3">★★★ (3 stars)</option>
+            <option value="2">★★ (2 stars)</option>
+            <option value="1">★ (1 star)</option>
+        </select>
+        <div class="error-message" id="ratingError">Please select a star rating.</div>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('reviewForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+            let valid = true;
+
+            // Email validation
+            const email = form.email;
+            if (!email.checkValidity()) {
+                document.getElementById('emailError').style.display = 'block';
+                valid = false;
+            }
+
+            // Username validation
+            const username = form.username;
+            if (!username.value || username.value.length < 3) {
+                document.getElementById('usernameError').style.display = 'block';
+                valid = false;
+            }
+
+            // Review validation
+            const review = form.review;
+            if (!review.value || review.value.length < 10) {
+                document.getElementById('reviewError').style.display = 'block';
+                valid = false;
+            }
+
+            // Rating validation
+            const rating = form.rating;
+            if (!rating.value) {
+                document.getElementById('ratingError').style.display = 'block';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Review submitted successfully!');
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
