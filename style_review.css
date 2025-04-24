@@ -45,3 +45,26 @@
     border: 3px solid #bcb8b1;
     margin-bottom: 14px;
 }
+
+quote-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    color: #d6ccc2;
+}
+
+/* Reviewer Name */
+.card_content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #344e41;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.card_content p {
+    font-size: 14px;
+    color: #5f7161;
+    line-height: 1.6;
+}
