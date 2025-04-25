@@ -66,7 +66,45 @@
         </div>
 
     </section>
-
+    <div id="couponTrigger" class="coupon-trigger">
+        <span>UPTO ₹200 OFF</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+    
+      <!-- Right Side Popup -->
+      <div id="couponPopup" class="coupon-popup">
+        <div class="coupon-popup-vertical">
+          <span>UPTO ₹200 OFF</span>
+          <span class="arrow close-arrow">&#9664;</span>
+        </div>
+        <div class="coupon-popup-content">
+          <div class="coupon-popup-main">
+            <div class="coupon-popup-left">
+              <span class="avail">Avail Upto</span>
+              <div class="off-amount">200 OFF</div>
+              <div class="coupon-row">
+                <span class="coupon-label">Coupon Code:</span>
+                <span class="coupon-code">LIBRIFYSAVE</span>
+              </div>
+              <p class="applicable">Applicable on your first order</p>
+            </div>
+            <div class="coupon-popup-right">
+              <img src="Images/coupon.png" alt="200 OFF" class="coupon-img">
+              <button class="signup-btn" id="showCouponBtn">SIGN UP NOW &gt;</button>
+            </div>
+          </div>
+        
+        </div>
+        <!-- Coupon Modal -->
+        <div id="couponModal" class="coupon-modal">
+          <div class="coupon-modal-content">
+            <h3>Your Coupon Code</h3>
+            <div class="coupon-code">LIBRIFYSAVE</div>
+            <p>Use this code to get up to ₹200 off on your first order!</p>
+            <button class="close-btn" id="closeModalBtn">Close</button>
+          </div>
+        </div>
+      </div>
 <div class="features-strip">
   <div class="feature-item">
     <i class="fas fa-truck"></i>
@@ -89,63 +127,14 @@
   </div>
 </div>
 
-    <div class="deals-row">
-        <div class="deals-timer-card">
-            <div class="timer">
-                <div>
-                    <span class="time-val" id="hours">03</span>
-                    <span class="time-label">Hrs</span>
-                </div>
-                <div>
-                    <span class="time-val" id="minutes">28</span>
-                    <span class="time-label">Mins</span>
-                </div>
-                <div>
-                    <span class="time-val" id="seconds">03</span>
-                    <span class="time-label">Secs</span>
-                </div>
-            </div>
-            <div class="deals-info">
-                <h3>Deals for the Week</h3>
-                <p>
-                    Here are some of our handpicked titles offered at a special price for a limited period.<br>
-                    Hurry the deals run out soon.
-                </p>
-            </div>
-        </div>
-        <div class="deal-books-row">
-            <div class="deal-book-card">
-                <img src="book1.jpg" alt="Book 1" class="deal-book-img">
-                <div class="deal-book-title">The Infinite Library</div>
-                <div class="deal-book-author">by Jane Doe</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹349</span>
-                    <span class="deal-book-old-price">₹499</span>
-                    <span class="deal-book-discount">(30% Off)</span>
-                </div>
-            </div>
-            <div class="deal-book-card">
-                <img src="book2.jpg" alt="Book 2" class="deal-book-img">
-                <div class="deal-book-title">Lost in Pages</div>
-                <div class="deal-book-author">by John Smith</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹279</span>
-                    <span class="deal-book-old-price">₹399</span>
-                    <span class="deal-book-discount">(30% Off)</span>
-                </div>
-            </div>
-            <div class="deal-book-card">
-                <img src="book3.jpg" alt="Book 3" class="deal-book-img">
-                <div class="deal-book-title">Mystery of Words</div>
-                <div class="deal-book-author">by Emily Clark</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹199</span>
-                    <span class="deal-book-old-price">₹299</span>
-                    <span class="deal-book-discount">(33% Off)</span>
-                </div>
-            </div>
-        </div>
-    </div>
+
+            
     <script src="1.js"></script>
+    <script>
+      document.getElementById('showCouponBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+    </script>
 </body>
 </html>
