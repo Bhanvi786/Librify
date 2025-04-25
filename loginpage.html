@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Librify Bookstore Login</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 360px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    color: #2e7d32;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #344e41;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #2e7d32;
+    outline: none;
+  }
+
+  .error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: block;
+    height: 18px;
+    visibility: hidden;
+  }
+
+  .error-visible {
+    visibility: visible;
+  }
+
+  button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #27632a;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Librify</h2>
+    <form id="loginForm" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <div class="error-message" id="emailError">Please enter a valid email address.</div>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6" />
+      <div class="error-message" id="passwordError">Password must be at least 6 characters.</div>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+
+    function validateEmail(email) {
+      const re = /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/;
+      return re.test(email);
+    }
+
+    form.addEventListener('submit', function(event) {
+      let valid = true;
+
+      if (!validateEmail(emailInput.value.trim())) {
+        emailError.classList.add('error-visible');
+        valid = false;
+      } else {
+        emailError.classList.remove('error-visible');
+      }
+
+      if (passwordInput.value.trim().length < 6) {
+        passwordError.classList.add('error-visible');
+        valid = false;
+      } else {
+        passwordError.classList.remove('error-visible');
+      }
+
+      if (!valid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
