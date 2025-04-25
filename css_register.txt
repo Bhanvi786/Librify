@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login - Bookstore</title>
-    <style>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
         body {
@@ -45,6 +39,7 @@
             font-weight: 500;
             color: #555;
         }
+        input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
@@ -56,6 +51,7 @@
             transition: border-color 0.3s ease;
             box-sizing: border-box;
         }
+        input[type="text"]:focus,
         input[type="email"]:focus,
         input[type="password"]:focus {
             border-color: #764ba2;
@@ -68,7 +64,6 @@
             margin-top: -15px;
             margin-bottom: 15px;
             font-weight: 600;
-            min-height: 18px;
         }
         button {
             width: 100%;
@@ -92,42 +87,30 @@
             font-weight: 700;
             font-size: 1em;
         }
-        .register-link {
+        .login-link {
             text-align: center;
             margin-top: 20px;
             font-size: 0.95em;
         }
-        .register-link a {
+        .login-link a {
             color: #764ba2;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
-        .register-link a:hover {
+        .login-link a:hover {
             color: #5a357a;
             text-decoration: underline;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Login to Your Account</h2>
-        <form id="loginForm" novalidate>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-            <div class="error" id="emailError"></div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required />
-            <div class="error" id="passwordError"></div>
 
-            <button type="submit">Login</button>
-        </form>
-        <div class="success-message" id="successMessage"></div>
-        <div class="register-link">
-            Don't have an account? <a href="register_page.html">Register here</a>
-        </div>
-    </div>
+
+
+
+    JAVASCRIPT REGISTER
+
+
 
     <script>
         function getUsers() {
@@ -135,18 +118,34 @@
             return users ? JSON.parse(users) : [];
         }
 
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
+        function saveUser(user) {
+            const users = getUsers();
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Clear previous errors and messages
+            // Clear previous errors
+            document.getElementById('usernameError').textContent = '';
             document.getElementById('emailError').textContent = '';
             document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
             document.getElementById('successMessage').textContent = '';
 
             let isValid = true;
 
+            const username = document.getElementById('username').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Username validation
+            if (username === '') {
+                document.getElementById('usernameError').textContent = 'Username is required.';
+                isValid = false;
+            }
 
             // Email validation
             if (email === '') {
@@ -164,30 +163,32 @@
             if (password === '') {
                 document.getElementById('passwordError').textContent = 'Password is required.';
                 isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+                isValid = false;
             }
 
-            if (!isValid) {
-                return;
+            // Confirm password validation
+            if (confirmPassword === '') {
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password.';
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                isValid = false;
             }
 
-            // Check if user exists and password matches
-            const users = getUsers();
-            const user = users.find(u => u.email === email);
+            if (isValid) {
+                // Check if email already registered
+                const users = getUsers();
+                if (users.some(user => user.email === email)) {
+                    document.getElementById('emailError').textContent = 'Email is already registered.';
+                    return;
+                }
 
-            if (!user) {
-                document.getElementById('emailError').textContent = 'No account found with this email.';
-                return;
+                // Save user to localStorage
+                saveUser({ username, email, password });
+                document.getElementById('successMessage').textContent = 'Registration successful! You can now login.';
+                this.reset();
             }
-
-            if (user.password !== password) {
-                document.getElementById('passwordError').textContent = 'Incorrect password.';
-                return;
-            }
-
-            // Successful login
-            document.getElementById('successMessage').textContent = 'Login successful!';
-            this.reset();
         });
     </script>
-</body>
-</html>
