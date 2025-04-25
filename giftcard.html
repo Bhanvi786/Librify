@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festival Gift Card Slider</title>
+  <!-- SwiperJS CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="giftcard.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Easter Card -->
+        <div class="swiper-slide card">
+          <img src="Images/easter.png" alt="Easter Gift Card" class="card-img"/>
+          <div class="card-content">
+            <h2>Happy Easter!</h2>
+            <p>Crack open a new story this season with a gift card from Book Haven.</p>
+          </div>
+        </div>
+        <!-- Diwali Card -->
+        <div class="swiper-slide card">
+          <img src="Images/diwali.png" alt="Diwali Gift Card" class="card-img"/>
+          <div class="card-content">
+            <h2>Happy Diwali!</h2>
+            <p>Light up your mind with a new read. Celebrate with Book Haven gift cards!</p>
+          </div>
+        </div>
+        <!-- Christmas Card -->
+        <div class="swiper-slide card">
+          <img src="Images/christmas.png" alt="Christmas Gift Card" class="card-img"/>
+          <div class="card-content">
+            <h2>Merry Christmas!</h2>
+            <p>Gift the magic of books this festive season from Book Haven.</p>
+          </div>
+        </div>
+        <!-- Dussehra Card -->
+        <div class="swiper-slide card">
+          <img src="Images/dusshera.png" alt="Dussehra Gift Card" class="card-img"/>
+          <div class="card-content">
+            <h2>Happy Dussehra!</h2>
+            <p>Let good stories triumph! Gift a Book Haven card today.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination and navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <button class="send-gift-btn">SEND GIFT CARD</button>
+  </div>
+  <!-- SwiperJS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="giftcard.js"></script>
+</body>
+</html>
