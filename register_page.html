@@ -5,6 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Register - Bookstore</title>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+    }
+    .container {
+        background: #fff;
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        width: 400px;
+        max-width: 90%;
+        box-sizing: border-box;
+        transition: transform 0.3s ease;
+    }
+    .container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 35px rgba(0,0,0,0.3);
+    }
+    h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #4b0082;
+            letter-spacing: 1.5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #764ba2;
+            outline: none;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.5);
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 0.85em;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #764ba2;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #5a357a;
+        }
+        .success-message {
+            color: #27ae60;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 1em;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+        .login-link a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .login-link a:hover {
+            color: #5a357a;
+            text-decoration: underline;
+        }
+
+</style>
 <body>
     <div class="container">
         <h2>Create Your Account</h2>
@@ -32,5 +138,85 @@
             Already have an account? <a href="loginpage.html">Login here</a>
         </div>
     </div>
+    <script>
+        function getUsers() {
+            const users = localStorage.getItem('users');
+            return users ? JSON.parse(users) : [];
+        }
+
+        function saveUser(user) {
+            const users = getUsers();
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+            document.getElementById('successMessage').textContent = '';
+
+            let isValid = true;
+
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Username validation
+            if (username === '') {
+                document.getElementById('usernameError').textContent = 'Username is required.';
+                isValid = false;
+            }
+
+            // Email validation
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required.';
+                isValid = false;
+            } else {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                    isValid = false;
+                }
+            }
+
+            // Password validation
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+                isValid = false;
+            }
+
+            // Confirm password validation
+            if (confirmPassword === '') {
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password.';
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Check if email already registered
+                const users = getUsers();
+                if (users.some(user => user.email === email)) {
+                    document.getElementById('emailError').textContent = 'Email is already registered.';
+                    return;
+                }
+
+                // Save user to localStorage
+                saveUser({ username, email, password });
+                document.getElementById('successMessage').textContent = 'Registration successful! You can now login.';
+                this.reset();
+            }
+        });
+    </script>
 </body>
 </html>
