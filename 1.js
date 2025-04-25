@@ -8,19 +8,16 @@ loginBtn.onclick = function(e) {
   loginModal.style.display = "block";
 }
 
-// Close modal when close (×) is clicked
 closeLogin.onclick = function() {
   loginModal.style.display = "none";
 }
 
-// Close modal when clicking outside modal content
 window.onclick = function(event) {
   if (event.target === loginModal) {
     loginModal.style.display = "none";
   }
 }
 
-  // Open popup
 document.getElementById('couponTrigger').onclick = function() {
   document.getElementById('couponPopup').classList.add('open');
   document.getElementById('couponTrigger').style.display = 'none';

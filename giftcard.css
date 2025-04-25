@@ -58,7 +58,7 @@ body {
 .card-content h2 {
   font-size: 1.3rem;
   margin: 0 0 8px 0;
-  color: #111; /* updated from #222 to match style.css darker text */
+  color: #111; 
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -66,7 +66,7 @@ body {
 
 .card-content p {
   font-size: 1rem;
-  color: #333; /* updated from #444 to match style.css text */
+  color: #333; 
   text-align: center;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -76,7 +76,7 @@ body {
 .send-gift-btn {
   width: 100%;
   margin-top: 18px;
-  background: #089da1; /* updated from #ff3576 to teal/cyan */
+  background: #089da1; 
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -88,13 +88,11 @@ body {
   transition: background 0.3s ease;
 }
 .send-gift-btn:hover {
-  background: #066a73; /* updated hover to darker teal */
+  background: #066a73; 
 }
 
-/* Swiper custom styles */
 .swiper-pagination-bullet {
-  background: #089da1; /* updated from pink to teal/cyan */
-  opacity: 0.5;
+  background: #089da1;   opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
@@ -105,8 +103,6 @@ body {
 .swiper-button-prev {
   display: none;
 }
-
-/* Responsive */
 @media (max-width: 500px) {
   .container {
     padding: 10px 2px 12px 2px;
@@ -122,4 +118,50 @@ body {
   .card-img {
     height: 160px;
   }
+}
+section nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 40px;  
+    background: #2c3e50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 15px 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section nav .logo img{
+    width: 100px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+section nav ul{
+    list-style: none;
+}
+
+section nav li{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+section nav li a{
+    text-decoration: none;
+    color:  #ffffff;
+}
+
+section nav li a:hover{
+    color: #089da1;
+}
+section nav .social_icon i{
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+section nav .social_icon i:hover{
+    color: #089da1;
+    cursor: pointer;
 }
