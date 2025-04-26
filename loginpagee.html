@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Bookstore</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm" novalidate>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <div class="error" id="emailError"></div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            <div class="error" id="passwordError"></div>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="success-message" id="successMessage"></div>
+        <div class="register-link">
+            Don't have an account? <a href="register_page.html">Register here</a>
+        </div>
+    </div>
+
+</body>
+</html>
