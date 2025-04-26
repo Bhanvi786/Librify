@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Your Own Gift Card</title>
+  <link rel="stylesheet" href="giftcard_designer.css"/>
+</head>
+<body>
+  <section>
+    <nav>
+      <div class="logo">
+        <img src="Images/logo.png" alt="Logo" />
+      </div>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Featured">Featured</a></li>
+        <li><a href="#Arrivals">Arrivals</a></li>
+        <li><a href="#Reviews">Reviews</a></li>
+        <li><a href="#Blog">Blog</a></li>
+      </ul>
+      <div class="social_icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-heart"></i>
+        <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Design Your Own Gift Card</h1>
+      <div class="designer">
+        <div class="preview">
+          <div class="card-preview" id="cardPreview">
+            <img id="cardImage" src="Images/easter.png" alt="Gift Card Image" />
+            <div id="cardText" class="card-text">Your message here</div>
+          </div>
+        </div>
+        <div class="controls">
+          <label for="imageSelect">Choose Image:</label>
+          <select id="imageSelect">
+            <option value="Images/easter.png">Easter</option>
+            <option value="Images/diwali.png">Diwali</option>
+            <option value="Images/christmas.png">Christmas</option>
+            <option value="Images/dusshera.png">Dussehra</option>
+            <option value="Images/dad.png">Best Dad</option>
+            <option value="Images/mom.png">Best Mom</option>
+            <option value="Images/congrats.png">Congratulations</option>
+            <option value="Images/anniversary.png">Happy Anniversary</option>
+            <option value="Images/birthday.png">Happy Birthday</option>
+            <option value="Images/welcome.png">Welcome</option>
+          </select>
+
+          <label for="messageInput">Message:</label>
+          <textarea id="messageInput" rows="4" placeholder="Enter your message here"></textarea>
+
+          <label for="textColor">Text Color:</label>
+          <select id="textColor" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
+            <option value="#089da1" selected>Teal</option>
+            <option value="#000000">Black</option>
+            <option value="#ffffff">White</option>
+            <option value="#ff4500">Orange Red</option>
+            <option value="#800080">Purple</option>
+            <option value="#008000">Green</option>
+          </select>
+
+          <label for="fontSize">Font Size:</label>
+          <select id="fontSize" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
+            <option value="14px" selected>14px</option>
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+            <option value="28px">28px</option>
+          </select>
+
+          <label for="fontFamily">Font Family:</label>
+          <select id="fontFamily" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
+            <option value="'Helvetica Neue', Helvetica, Arial, sans-serif" selected>Helvetica Neue</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+            <option value="'Courier New', monospace">Courier New</option>
+            <option value="Georgia, serif">Georgia</option>
+          </select>
+
+          <label for="textAlign">Text Alignment:</label>
+          <select id="textAlign" style="padding: 8px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
+            <option value="center" selected>Center</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+          </select>
+
+          <label for="bgColor">Background Color:</label>
+          <input type="color" id="bgColor" value="#ffffff" style="width: 100%; height: 40px; border-radius: 6px; border: 1px solid #ccc; padding: 0;"/>
+
+          <button id="sendGiftCardBtn">Send Gift Card</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="giftcard_designer.js"></script>
+</body>
+</html>
