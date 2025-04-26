@@ -91,6 +91,24 @@ body {
   background: #066a73; 
 }
 
+.customize-gift-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #089da1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.customize-gift-btn:hover {
+  background: #066a73;
+}
+
 .swiper-pagination-bullet {
   background: #089da1;   opacity: 0.5;
 }
