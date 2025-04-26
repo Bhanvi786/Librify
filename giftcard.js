@@ -17,6 +17,7 @@ const swiper = new Swiper('.mySwiper', {
     disableOnInteraction: false,
   }
 });
+
 document.querySelector('.send-gift-btn').addEventListener('click', () => {
   alert('Gift card sent! (Implement your own action here)');
 });
