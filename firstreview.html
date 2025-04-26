@@ -301,5 +301,81 @@
 
     <button type="submit">Submit Review</button>
 </form>
+
+<script>
+    (function() {
+        const form = document.getElementById('reviewForm');
+        const email = form.email;
+        const username = form.username;
+        const review = form.review;
+        const rating = form.rating;
+
+        const emailError = document.getElementById('emailError');
+        const usernameError = document.getElementById('usernameError');
+        const reviewError = document.getElementById('reviewError');
+        const ratingError = document.getElementById('ratingError');
+
+        function validateEmail(email) {
+            const re = /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/;
+            return re.test(email);
+        }
+
+        function showError(input, errorElement, message) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            input.classList.add('input-error');
+        }
+
+        function hideError(input, errorElement) {
+            errorElement.style.display = 'none';
+            input.classList.remove('input-error');
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let valid = true;
+
+            // Validate email
+            if (!validateEmail(email.value.trim())) {
+                showError(email, emailError, 'Please enter a valid email.');
+                valid = false;
+            } else {
+                hideError(email, emailError);
+            }
+
+            // Validate username
+            if (username.value.trim().length < 3) {
+                showError(username, usernameError, 'Please enter your username (at least 3 characters).');
+                valid = false;
+            } else {
+                hideError(username, usernameError);
+            }
+
+            // Validate review
+            if (review.value.trim().length < 10) {
+                showError(review, reviewError, 'Please enter your review (at least 10 characters).');
+                valid = false;
+            } else {
+                hideError(review, reviewError);
+            }
+
+            // Validate rating
+            if (!rating.value) {
+                showError(rating, ratingError, 'Please select a star rating.');
+                valid = false;
+            } else {
+                hideError(rating, ratingError);
+            }
+
+            if (valid) {
+                alert('Thank you for your review!');
+                form.reset();
+            }
+        });
+    })();
+</script>
+
+
     </body>
 </html>
