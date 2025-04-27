@@ -274,6 +274,45 @@ section .main .main_img img{
     gap: 20px;
 }
 
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-input {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 180px;
+    transition: width 0.3s ease;
+}
+
+.search-input:focus {
+    width: 220px;
+    box-shadow: 0 0 5px #089da1;
+}
+
+.search-button {
+    background-color: #089da1;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #066a73;
+}
+
 .social_icon i, .social_icon a {
     color: white;
     font-size: 20px;
