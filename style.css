@@ -22,7 +22,7 @@ section nav{
     background: #2c3e50;
     position: fixed;
     left: 0;
-    z-index: 100;
+    z-index: 10000; /* increased z-index to be above timer */
 padding: 15px 50px;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -152,12 +152,7 @@ section .main .main_img img{
   margin-right: 12px;
 }
 
-.timer {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
+/* Removed timer styles as timer is removed from HTML */
 
 .time-val {
   display: block;
@@ -498,7 +493,7 @@ body {
     font-size: 44px;
     font-weight: bold;
     color: #222;
-    margin: 0;
+    margin: 80px 0 0 0; /* increased top margin to move coupon further down */
   }
   .coupon-row {
     font-size: 18px;

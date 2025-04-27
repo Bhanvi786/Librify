@@ -67,3 +67,29 @@ if (mainImg) {
   }
   animate();
 }
+
+// Timer countdown
+function startTimer(duration, displayHours, displayMinutes, displaySeconds) {
+  let timer = duration, hours, minutes, seconds;
+  setInterval(function () {
+    hours = Math.floor(timer / 3600);
+    minutes = Math.floor((timer % 3600) / 60);
+    seconds = Math.floor(timer % 60);
+
+    displayHours.textContent = hours < 10 ? "0" + hours : hours;
+    displayMinutes.textContent = minutes < 10 ? "0" + minutes : minutes;
+    displaySeconds.textContent = seconds < 10 ? "0" + seconds : seconds;
+
+    if (--timer < 0) {
+      timer = duration; // reset timer or stop here
+    }
+  }, 1000);
+}
+
+window.onload = function () {
+  const displayHours = document.getElementById('hours');
+  const displayMinutes = document.getElementById('minutes');
+  const displaySeconds = document.getElementById('seconds');
+  // Set timer for 1 hour (3600 seconds)
+  startTimer(3600, displayHours, displayMinutes, displaySeconds);
+};
