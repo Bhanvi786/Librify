@@ -48,3 +48,22 @@ document.getElementById('couponModal').onclick = function(event) {
     this.classList.remove('open');
   }
 };
+
+// Animate main image up and down
+const mainImg = document.querySelector('.main_img img');
+if (mainImg) {
+  let direction = 1; // 1 for down, -1 for up
+  let position = 0;
+  const maxOffset = 20; // max pixels to move up/down
+  const speed = 0.5; // pixels per frame
+
+  function animate() {
+    position += direction * speed;
+    if (position > maxOffset || position < 0) {
+      direction *= -1;
+    }
+    mainImg.style.transform = `translateY(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
