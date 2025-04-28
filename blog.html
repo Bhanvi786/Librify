@@ -57,6 +57,23 @@
         border: none;
         box-shadow: none;
     }
+    .blog-post {
+        background: var(--post-bg-color);
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+        width: 280px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-post:hover {
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
     }
     </style>
     <header>
