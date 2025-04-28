@@ -74,6 +74,38 @@
     .blog-post:hover {
         box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
+    .post-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        flex-shrink: 0;
+    }
+    .blog-post:hover .post-image {
+        transform: scale(1.05);
+    }
+    .post-content {
+        padding: 20px 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        color: var(--post-title-color);
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    .blog-post:hover .post-title {
+        color: var(--post-title-hover-color);
+    }
+    .post-excerpt {
+        font-size: 1rem;
+        color: var(--post-excerpt-color);
+        margin-bottom: 15px;
+        line-height: 1.4;
+        flex-grow: 1;
+    }
     }
     </style>
     <header>
