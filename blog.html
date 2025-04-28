@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blogs</title>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-    <style>
+<style>
     /* CSS Variables for light and dark themes */
     :root {
         --bg-color: #f0f4f8;
@@ -38,7 +35,9 @@
         --scrollbar-track: #2a2a2a;
         --scrollbar-thumb: #66aaff;
     }
-        * {
+
+    /* Reset and base styles */
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -73,18 +72,6 @@
         color: var(--header-color);
         letter-spacing: 3px;
         margin-bottom: 10px;
-    
-        .posts-container {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        justify-content: center;
-        width: 100%;
-        max-width: 1200px;
-        overflow-x: auto;
-        padding-bottom: 20px;
-        border: none;
-        box-shadow: none;
     }
     .theme-toggle-btn {
         background: var(--button-bg-color);
@@ -112,8 +99,6 @@
         background: var(--button-bg-hover);
         transform: scale(1.1);
     }
-    
-
     .posts-container {
         display: flex;
         flex-direction: row;
@@ -203,7 +188,6 @@
         line-height: 1.5;
         animation: fadeInContent 0.5s ease forwards;
     }
-    
     /* Animations */
     @keyframes fadeInDown {
         from {
@@ -241,7 +225,6 @@
             max-height: 0;
         }
     }
-    
     /* Scrollbar styling for posts container */
     .posts-container::-webkit-scrollbar {
         height: 8px;
@@ -253,8 +236,9 @@
         background: transparent;
         border-radius: 4px;
     }
-    }
-    </style>
+</style>
+</head>
+<body>
     <header>
         <h1>Blogs</h1>
         <button class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle dark and light mode">🌙</button>
@@ -297,7 +281,7 @@
             <img src="review4.jpg" alt="Bookstore Event" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">Upcoming Bookstore Events You Can't Miss</h2>
-                <p class="post-excerpt">Join us for exciting events including book signings, readings, and community gatherings...</p>
+                <p>Join us for exciting events including book signings, readings, and community gatherings...</p>
                 <div class="full-content">
                     <p>Stay connected with your local bookstore and meet fellow book lovers at these fun and engaging events.</p>
                 </div>
@@ -305,7 +289,6 @@
             </div>
         </article>
     </div>
-    
 <script>
     // JavaScript to toggle full content visibility on "Read More" click with animation
     document.querySelectorAll('.read-more').forEach(button => {
@@ -352,9 +335,6 @@
             localStorage.setItem('theme', 'light');
         }
     });
-
-
 </script>
-
-    </body>
+</body>
 </html>
