@@ -6,7 +6,46 @@
 <title>Blogs</title>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        min-height: 100vh;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    header {
+        margin-bottom: 40px;
+        animation: fadeInDown 0.8s ease forwards;
+        text-align: center;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: var(--header-color);
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+    </style>
     <header>
         <h1>Blogs</h1>
         <button class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle dark and light mode">🌙</button>
