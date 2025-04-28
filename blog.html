@@ -321,6 +321,16 @@
         });
     });
 
+    // Dark mode toggle
+    const toggleBtn = document.querySelector('.theme-toggle-btn');
+    const body = document.body;
+
+    // Load saved theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    }
+
+
 </script>
 
     </body>
