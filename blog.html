@@ -291,5 +291,37 @@
             </div>
         </article>
     </div>
+    
+<script>
+    // JavaScript to toggle full content visibility on "Read More" click with animation
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const fullContent = button.previousElementSibling;
+            const isVisible = fullContent.style.display === 'block';
+            if (isVisible) {
+                fullContent.style.animation = 'fadeOutContent 0.4s forwards';
+                setTimeout(() => {
+                    fullContent.style.display = 'none';
+                }, 400);
+                button.textContent = 'Read More';
+                button.setAttribute('aria-pressed', 'false');
+            } else {
+                fullContent.style.display = 'block';
+                fullContent.style.animation = 'fadeInContent 0.5s forwards';
+                button.textContent = 'Read Less';
+                button.setAttribute('aria-pressed', 'true');
+            }
+        });
+        // Accessibility: allow toggle with keyboard
+        button.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                button.click();
+            }
+        });
+    });
+
+</script>
+
     </body>
 </html>
