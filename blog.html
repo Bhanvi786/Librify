@@ -106,6 +106,84 @@
         line-height: 1.4;
         flex-grow: 1;
     }
+    .read-more {
+        display: inline-block;
+        background: var(--button-bg-color);
+        color: white;
+        padding: 8px 18px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 700;
+        user-select: none;
+        box-shadow: 0 6px 12px var(--button-shadow);
+        transition: background 0.4s ease, transform 0.3s ease;
+        align-self: flex-start;
+        outline: none;
+        border: none;
+    }
+    .read-more:hover {
+        background: var(--button-bg-hover);
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(41, 128, 185, 0.6);
+    }
+    .full-content {
+        display: none;
+        margin-top: 10px;
+        color: var(--post-excerpt-color);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        animation: fadeInContent 0.5s ease forwards;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInContent {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 500px;
+        }
+    }
+    @keyframes fadeOutContent {
+        from {
+            opacity: 1;
+            max-height: 500px;
+        }
+        to {
+            opacity: 0;
+            max-height: 0;
+        }
+    }
+    
+    /* Scrollbar styling for posts container */
+    .posts-container::-webkit-scrollbar {
+        height: 8px;
+    }
+    .posts-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .posts-container::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 4px;
+    }
     }
     </style>
     <header>
