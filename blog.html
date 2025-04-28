@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blogs</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        min-height: 100vh;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    header {
+        margin-bottom: 40px;
+        animation: fadeInDown 0.8s ease forwards;
+        text-align: center;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: var(--header-color);
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    
+        .posts-container {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        border: none;
+        box-shadow: none;
+    }
+    .blog-post {
+        background: var(--post-bg-color);
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+        width: 280px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-post:hover {
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .post-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        flex-shrink: 0;
+    }
+    .blog-post:hover .post-image {
+        transform: scale(1.05);
+    }
+    .post-content {
+        padding: 20px 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        color: var(--post-title-color);
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    .blog-post:hover .post-title {
+        color: var(--post-title-hover-color);
+    }
+    .post-excerpt {
+        font-size: 1rem;
+        color: var(--post-excerpt-color);
+        margin-bottom: 15px;
+        line-height: 1.4;
+        flex-grow: 1;
+    }
+    }
+    </style>
+    <header>
+        <h1>Blogs</h1>
+        <button class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle dark and light mode">🌙</button>
+    </header>
+    <div class="posts-container" role="list">
+        <article class="blog-post" style="animation-delay: 0.3s;" role="listitem">
+            <img src="review1.avif" alt="Book Reading" class="post-image" />
+            <div class="post-content">
+                <h2 class="post-title">Top 10 Must-Read Books of 2024</h2>
+                <p class="post-excerpt">Discover the most anticipated books of the year that every book lover should add to their collection...</p>
+                <div class="full-content">
+                    <p>From thrilling mysteries to heartwarming romances, this list covers a wide range of genres and authors. Stay ahead of the curve and dive into these captivating stories.</p>
+                </div>
+                <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
+            </div>
+        </article>
+        <article class="blog-post" style="animation-delay: 0.5s;" role="listitem">
+            <img src="review2.webp" alt="Author Interview" class="post-image" />
+            <div class="post-content">
+                <h2 class="post-title">Interview with Bestselling Author Jane Doe</h2>
+                <p class="post-excerpt">Get insights into Jane Doe's writing process, inspirations, and upcoming projects in this exclusive interview...</p>
+                <div class="full-content">
+                    <p>Jane shares her journey from aspiring writer to bestselling author, along with tips for aspiring authors and sneak peeks of her next novel.</p>
+                </div>
+                <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
+            </div>
+        </article>
+        <article class="blog-post" style="animation-delay: 0.7s;" role="listitem">
+            <img src="review3.jpg" alt="Reading Tips" class="post-image" />
+            <div class="post-content">
+                <h2 class="post-title">5 Tips to Enhance Your Reading Experience</h2>
+                <p class="post-excerpt">Improve your reading habits and get more out of every book with these simple yet effective tips...</p>
+                <div class="full-content">
+                    <p>From setting reading goals to creating a cozy reading nook, these tips will help you enjoy your books even more.</p>
+                </div>
+                <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
+            </div>
+        </article>
+        <article class="blog-post" style="animation-delay: 0.9s;" role="listitem">
+            <img src="review4.jpg" alt="Bookstore Event" class="post-image" />
+            <div class="post-content">
+                <h2 class="post-title">Upcoming Bookstore Events You Can't Miss</h2>
+                <p class="post-excerpt">Join us for exciting events including book signings, readings, and community gatherings...</p>
+                <div class="full-content">
+                    <p>Stay connected with your local bookstore and meet fellow book lovers at these fun and engaging events.</p>
+                </div>
+                <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
+            </div>
+        </article>
+    </div>
+    </body>
+</html>
