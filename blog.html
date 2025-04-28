@@ -134,6 +134,44 @@
         line-height: 1.5;
         animation: fadeInContent 0.5s ease forwards;
     }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInContent {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 500px;
+        }
+    }
+    @keyframes fadeOutContent {
+        from {
+            opacity: 1;
+            max-height: 500px;
+        }
+        to {
+            opacity: 0;
+            max-height: 0;
+        }
+    }
     }
     </style>
     <header>
