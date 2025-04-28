@@ -9,6 +9,35 @@
 
 <body>
     <style>
+    /* CSS Variables for light and dark themes */
+    :root {
+        --bg-color: #f0f4f8;
+        --text-color: #222;
+        --header-color: #34495e;
+        --post-bg-color: white;
+        --post-title-color: #2c3e50;
+        --post-title-hover-color: #3498db;
+        --post-excerpt-color: #555;
+        --button-bg-color: #3498db;
+        --button-bg-hover: #2980b9;
+        --button-shadow: rgba(52, 152, 219, 0.4);
+        --scrollbar-track: #f0f4f8;
+        --scrollbar-thumb: #3498db;
+    }
+    body.dark-mode {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --header-color: #e0e0e0;
+        --post-bg-color: #1e1e1e;
+        --post-title-color: #e0e0e0;
+        --post-title-hover-color: #66aaff;
+        --post-excerpt-color: #bbb;
+        --button-bg-color: #66aaff;
+        --button-bg-hover: #5599ee;
+        --button-shadow: rgba(102, 170, 255, 0.6);
+        --scrollbar-track: #2a2a2a;
+        --scrollbar-thumb: #66aaff;
+    }
         * {
         margin: 0;
         padding: 0;
@@ -56,6 +85,32 @@
         padding-bottom: 20px;
         border: none;
         box-shadow: none;
+    }
+    .theme-toggle-btn {
+        background: var(--button-bg-color);
+        border: none;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: 700;
+        box-shadow: 0 6px 12px var(--button-shadow);
+        transition: background 0.4s ease, transform 0.3s ease;
+        user-select: none;
+        font-size: 1.4rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .theme-toggle-btn:hover {
+        background: var(--button-bg-hover);
+        transform: scale(1.1);
     }
     .blog-post {
         background: var(--post-bg-color);
