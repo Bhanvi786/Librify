@@ -236,7 +236,24 @@
         background: transparent;
         border-radius: 4px;
     }
-</style>
+    </style>
+    <style>
+        footer {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border-top: 1px solid #ccc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body.dark-mode footer {
+            color: var(--text-color);
+            border-top: 1px solid #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -281,11 +298,11 @@
             <img src="review4.jpg" alt="Bookstore Event" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">Upcoming Bookstore Events You Can't Miss</h2>
-                <p>Join us for exciting events including book signings, readings, and community gatherings...</p>
+                <p class="post-excerpt">Join us for exciting events including book signings, readings, and community gatherings...</p>
                 <div class="full-content">
                     <p>Stay connected with your local bookstore and meet fellow book lovers at these fun and engaging events.</p>
                 </div>
-                <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
+                <span class="read-more" tabindex="0" role="button" aria-pressed="false" style="align-self: flex-start;">Read More</span>
             </div>
         </article>
     </div>
@@ -336,5 +353,8 @@
         }
     });
 </script>
+    <footer>
+        <p>© 2024 Librify. All rights reserved.</p>
+    </footer>
 </body>
 </html>
