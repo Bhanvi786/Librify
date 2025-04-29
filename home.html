@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <section>
+
+        <nav>
+
+            <div class="logo">
+                <img src="Images/logo.png">
+            </div>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Featured">Featured</a></li>
+                <li><a href="#Arrivals">Arrivals</a></li>
+                <li><a href="#Reviews">Reviews</a></li>
+                <li><a href="#Blog">Blog</a></li>
+                <li><a href="giftcard.html">Giftcards</a></li>
+            </ul>
+            <div class="social_icon">
+                <form class="search-form" action="#" method="GET">
+                    <input type="text" name="search" placeholder="Search books..." class="search-input" />
+                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <i class="fa-solid fa-heart"></i>
+                <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+        
+        <div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLogin">&times;</span>
+        <h2>Welcome</h2>
+        <p>To access account and manage orders</p>
+        <button class="login-signup-btn">LOGIN / SIGNUP</button>
+        <hr>
+   
+        <ul class="login-list">
+            <li>Orders</li>
+            <li>Wishlist</li>
+            <li><a href="giftcard.html">Gift Cards</a><span class="new-badge">New</span></li>
+            <li>Contact Us</li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="main">
+
+            <div class="main_tag">
+                <h1>WELCOME TO<br><span>THE BOOK STORE</span></h1>
+
+                <p>
+                    Discover a world of stories within our curated collection of bestselling titles, timeless classics, and hidden literary treasures. Whether you're a lifelong book lover or just beginning your reading journey, there's always something new and inspiring waiting to be explored!
+                </p>
+                <a href="#" class="main_btn">Learn More</a>
+
+            </div>
+            <div class="main_img">
+                <img src="Images/table.png">
+            </div>
+
+        </div>
+
+    </section>
+    <div id="couponTrigger" class="coupon-trigger">
+        <span>UPTO ₹200 OFF</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+    
+    
+      <div id="couponPopup" class="coupon-popup">
+        <div class="coupon-popup-vertical">
+          <span>UPTO ₹200 OFF</span>
+          <span class="arrow close-arrow">&#9664;</span>
+        </div>
+        <div class="coupon-popup-content">
+          <div class="coupon-popup-main">
+            <div class="coupon-popup-left">
+              <span class="avail">Avail Upto</span>
+              <div class="off-amount">200 OFF</div>
+              <div class="coupon-row">
+                <span class="coupon-label">Coupon Code:</span>
+                <span class="coupon-code">LIBRIFYSAVE</span>
+              </div>
+              <p class="applicable">Applicable on your first order</p>
+            </div>
+            <div class="coupon-popup-right">
+              <img src="Images/coupon.png" alt="200 OFF" class="coupon-img">
+              <button class="signup-btn" id="showCouponBtn">SIGN UP NOW ></button>
+            </div>
+          </div>
+console.log('Navigation Bar Loaded');
+console.log('Login Modal Loaded');
+console.log('Main Content Loaded');
+console.log('Coupon Trigger Loaded');
+console.log('Coupon Popup Loaded');
+console.log('Features Strip Loaded');        
+        </div>
+
+        <div id="couponModal" class="coupon-modal">
+          <div class="coupon-modal-content">
+            <h3>Your Coupon Code</h3>
+            <div class="coupon-code">LIBRIFYSAVE</div>
+            <p>Use this code to get up to ₹200 off on your first order!</p>
+            <button class="close-btn" id="closeModalBtn">Close</button>
+          </div>
+        </div>
+      </div>
+<div class="features-strip">
+  <div class="feature-item">
+    <i class="fas fa-truck"></i>
+    <span>Free Delivery</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-money-bill-wave"></i>
+    <span>Cash on Delivery</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-certificate"></i>
+    <span>Original Products</span>
+  </div>
+  <div class="feature-divider"></div>
+  <div class="feature-item">
+    <i class="fas fa-retweet"></i>
+    <span>Easy Replacement</span>
+  </div>
+</div>
+
+
+            
+    <script src="1.js"></script>
+    <script>
+      document.getElementById('showCouponBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+    </script>
+</body>
+</html>
