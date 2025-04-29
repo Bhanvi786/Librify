@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<head>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<head>
+    <link rel="stylesheet" href="combo_section_theme.css">
+</head>
 <body>
     
     <section>
@@ -135,8 +141,25 @@ console.log('Features Strip Loaded');
     <i class="fas fa-retweet"></i>
     <span>Easy Replacement</span>
   </div>
+  <div class="feature-item">
+    <i class="fas fa-retweet"></i>
+    <span>Easy Replacement</span>
+  </div>
 </div>
 
+<!-- Chatbot UI -->
+<div id="chatbot-container" class="chatbot-closed">
+  <div id="chatbot-header">
+    <span>Chat with us</span>
+    <button id="chatbot-close-btn">&times;</button>
+  </div>
+  <div id="chatbot-messages"></div>
+  <form id="chatbot-form">
+    <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off" required />
+    <button type="submit">Send</button>
+  </form>
+</div>
+<button id="chatbot-toggle-btn" title="Chat with us">💬</button>
 
             
     <script src="1.js"></script>
@@ -146,5 +169,94 @@ console.log('Features Strip Loaded');
         event.stopPropagation();
       });
     </script>
+    <script src="chatbot.js"></script>
+
+  <section class="combo-section">
+    <div class="combo-header">
+      <h2>COMBO'S FOR EVERY BOOK READERS</h2>
+      <button class="view-all-btn">VIEW ALL</button>
+    </div>
+    <div class="carousel-container">
+      <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Combo Items Start -->
+        <div class="combo-card">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/sZMojvnyboEQgLF/image.jpg" alt="Ved and Varun Comics">
+          <div class="combo-info">
+            <p class="combo-title">Ved and Varun - 4 Comics Set - Superhero Origin Series</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 399</span>
+              <span class="new-price">Rs 174</span>
+              <span class="discount">56% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <img src="https://i.imgur.com/3B6z9jR.png" alt="Kids Good Habits Pack">
+          <div class="combo-info">
+            <p class="combo-title">Kids Good Habits Pack - I want to (25 books set)</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 999</span>
+              <span class="new-price">Rs 429</span>
+              <span class="discount">57% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <img src="https://i.imgur.com/0h5Jb5U.png" alt="Sudha Murty Combo">
+          <div class="combo-info">
+            <p class="combo-title">Sudha Murty 4 Books Combo: Wise and Otherwise + The Magic of the Lost Temple...</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 999</span>
+              <span class="new-price">Rs 429</span>
+              <span class="discount">57% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <img src="https://i.imgur.com/4tI2u1o.png" alt="Magical Book Combo">
+          <div class="combo-info">
+            <p class="combo-title">Magical book on quicker maths, English is Easy & Analytical Reasoning</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 830</span>
+              <span class="new-price">Rs 700</span>
+              <span class="discount">15% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <img src="https://i.imgur.com/9yQd6rB.png" alt="Verbal & Non Verbal Reasoning">
+          <div class="combo-info">
+            <p class="combo-title">A Modern Approach To Verbal & Non Verbal Reasoning & Quantitative Aptitude</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 1,659</span>
+              <span class="new-price">Rs 1,395</span>
+              <span class="discount">15% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <img src="https://i.imgur.com/1k8n1yK.png" alt="Savi Sharma Combo">
+          <div class="combo-info">
+            <p class="combo-title">Savi Sharma Combo Pack: Is Not Your Story & Everyone Has a Story</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 325</span>
+              <span class="new-price">Rs 271</span>
+              <span class="discount">17% OFF</span>
+            </div>
+          </div>
+        </div>
+        <!-- Combo Items End -->
+      </div>
+      <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+  <script src="2.js"></script>
 </body>
 </html>
