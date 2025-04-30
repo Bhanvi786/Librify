@@ -1,8 +1,20 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+/* Override combo-section styles to reduce size from bottom */
+.combo-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 8px !important;
+}
+
+section .combo-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 8px !important;
 }
 
 section{
@@ -18,13 +30,72 @@ section nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 15px 40px;  
-    background: #2c3e50;
+    padding: 15px 50px;
+    background: rgba(44, 62, 80, 0.85);
+    backdrop-filter: blur(10px);
     position: fixed;
     left: 0;
     z-index: 10000; /* increased z-index to be above timer */
-padding: 15px 50px;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #089da1;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+section nav:hover {
+    background: rgba(44, 62, 80, 1);
+    box-shadow: 0 6px 20px rgba(8, 157, 161, 0.7);
+}
+
+section nav .logo img {
+    width: 110px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+section nav .logo img:hover {
+    transform: scale(1.1);
+}
+
+section nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+section nav li {
+    display: inline-block;
+    padding: 0 10px;
+    position: relative;
+}
+
+section nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+section nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #089da1;
+    transition: width 0.3s ease;
+}
+
+section nav li a:hover {
+    color: #089da1;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px #089da1;
+    animation: glow 1.5s infinite alternate;
+}
+
+section nav li a:hover::after {
+    width: 100%;
 }
 
 section nav .logo img{
@@ -44,10 +115,24 @@ section nav li{
 section nav li a{
     text-decoration: none;
     color:  #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
 section nav li a:hover{
     color: #089da1;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px #089da1;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #089da1, 0 0 10px #089da1;
+    }
+    100% {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
 }
 section nav .social_icon i{
     margin: 0 5px;
