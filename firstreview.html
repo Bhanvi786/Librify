@@ -1,20 +1,60 @@
 <html>
     <head>
         <title>Review page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="chatbot.css">
+        <link rel="stylesheet" href="combo_section_theme.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <body>
+        <section>
+            <nav>
+                <div class="logo">
+                    <img src="Images/logo.png">
+                </div>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Featured">Featured</a></li>
+                    <li><a href="#Arrivals">Arrivals</a></li>
+                    <li><a href="#Reviews">Reviews</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="giftcard.html">Giftcards</a></li>
+                </ul>
+                <div class="social_icon">
+                    <form class="search-form" action="#" method="GET">
+                        <input type="text" name="search" placeholder="Search books..." class="search-input" />
+                        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <i class="fa-solid fa-heart"></i>
+                    <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+                </div>
+            </nav>
+        </section>
         <style>
             /* Global Review Section Styling */
-            body {
+html, body, section, nav {
+    margin: 0;
+    padding: 0;
+}
+
+section, nav {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+}
+
+nav ul {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+body {
             background-image: url(bg.png);
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
-        }
 .reviews {
     width: 100%;
-    padding: 60px 20px;
+    padding: 130px 0 0 0;
     background: url(abcd.jpg) no-repeat center center/cover;
     font-family: 'Poppins', sans-serif;
     position: relative;
@@ -27,7 +67,8 @@
     text-align: center;
     font-size: 42px;
     color: #344e41;
-    margin-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
@@ -120,16 +161,16 @@
 
         </style>
         <style>
-            /* Additional Review Form Styling */
-            .review-form {
-                max-width: 500px;
-                margin: 40px auto;
-                padding: 20px;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                font-family: 'Poppins', sans-serif;
-            }
+/* Additional Review Form Styling */
+.review-form {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
             .review-form h2 {
                 text-align: center;
                 margin-bottom: 20px;
