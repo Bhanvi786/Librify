@@ -180,10 +180,11 @@ hr {
     font-size: 13px;
     color: #2176ae;
     min-width: 80px;
+    text-align: center;
 }
 .feature img {
     width: 32px;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
 .right-section {
