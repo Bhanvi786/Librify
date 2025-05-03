@@ -1,0 +1,251 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.breadcrumb {
+    color: #fff;
+    background: #18a6a6;
+    font-size: 15px;
+    padding: 14px 0 14px 30px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 500;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 30px 0 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.left-section {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.book-cover {
+    width: 200px;
+    border-radius: 7px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    border: 2px solid #f3d6c6;
+}
+
+.center-section {
+    flex: 1;
+    min-width: 400px;
+    max-width: 700px;
+}
+
+.book-title {
+    color: #222;
+    margin: 0 0 7px 0;
+    font-size: 2.1em;
+    font-weight: 600;
+}
+
+.book-meta {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+.book-meta a {
+    color: #2176ae;
+    text-decoration: none;
+}
+.book-meta a:hover {
+    text-decoration: underline;
+}
+
+.rating-row {
+    font-size: 16px;
+    margin: 7px 0 8px 0;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.rating-value {
+    color: #d32f2f;
+    font-weight: bold;
+}
+.stars {
+    color: #f7b500;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+.review-count {
+    color: #888;
+    font-size: 14px;
+}
+
+.price-row {
+    font-size: 1.6em;
+    color: #18a6a6;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.availability-row {
+    color: #43a047;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.shipping-row {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.desc-row {
+    color: #222;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 7px;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 18px 0 15px 0;
+}
+
+.details-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.detail-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+.detail-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 3px;
+}
+.detail-icon img {
+    width: 22px;
+    margin-bottom: 3px;
+}
+.detail-value {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+}
+.see-all {
+    min-width: 80px;
+    margin-left: 10px;
+}
+.see-all a {
+    color: #2176ae;
+    font-size: 15px;
+    text-decoration: none;
+}
+.see-all a:hover {
+    text-decoration: underline;
+}
+
+.features-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 16px;
+    margin-bottom: 18px;
+    flex-wrap: nowrap;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #2176ae;
+    min-width: 80px;
+}
+.feature img {
+    width: 32px;
+    margin-bottom: 4px;
+}
+
+.right-section {
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.action-box {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 22px 28px 22px 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 220px;
+}
+.action-box label {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 6px;
+}
+.action-box select {
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    width: 60px;
+}
+.action-box button {
+    font-size: 16px;
+    margin-bottom: 13px;
+    padding: 10px 0;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.18s, color 0.18s;
+}
+.action-box .add-cart {
+    background: #18a6a6;
+    color: #fff;
+}
+.action-box .add-cart:hover {
+    background: #117575;
+}
+.action-box .buy-now {
+    background: #c75c00;
+    color: #fff;
+}
+.action-box .buy-now:hover {
+    background: #a84c00;
+}
+.action-box .wishlist {
+    background: #fff;
+    color: #18a6a6;
+    border: 2px solid #18a6a6;
+}
+.action-box .wishlist:hover {
+    background: #e8f5f5;
+}
