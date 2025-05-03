@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blogs</title>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
 <style>
     /* CSS Variables for light and dark themes */
     :root {
@@ -20,6 +20,8 @@
         --button-shadow: rgba(52, 152, 219, 0.4);
         --scrollbar-track: #f0f4f8;
         --scrollbar-thumb: #3498db;
+        --footer-bg: #eaeaea;
+        --footer-text: #555;
     }
     body.dark-mode {
         --bg-color: #121212;
@@ -34,6 +36,8 @@
         --button-shadow: rgba(102, 170, 255, 0.6);
         --scrollbar-track: #2a2a2a;
         --scrollbar-thumb: #66aaff;
+        --footer-bg: #222;
+        --footer-text: #aaa;
     }
 
     /* Reset and base styles */
@@ -51,8 +55,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 40px 20px;
+        padding: 40px 20px 80px;
         transition: background 0.3s ease, color 0.3s ease;
+        scroll-behavior: smooth;
     }
     header {
         margin-bottom: 40px;
@@ -63,7 +68,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
+        position: sticky;
+        top: 0;
+        background: var(--bg-color);
+        z-index: 100;
+        box-shadow: none;
+        transition: box-shadow 0.3s ease;
+        padding: 10px 0;
+    }
+    header.scrolled {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     header h1 {
         font-family: 'Merriweather', serif;
@@ -93,7 +107,8 @@
         height: 44px;
         position: absolute;
         right: 0;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .theme-toggle-btn:hover {
         background: var(--button-bg-hover);
@@ -103,13 +118,21 @@
         display: flex;
         flex-direction: row;
         gap: 30px;
-        justify-content: center;
+        justify-content: flex-start;
         width: 100%;
         max-width: 1200px;
         overflow-x: auto;
-        padding-bottom: 20px;
-        border: none;
-        box-shadow: none;
+        padding: 20px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 100%);
+        box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
+        border: 1px solid #d0d7e6;
+        scroll-behavior: smooth;
+    }
+    body.dark-mode .posts-container {
+        background: linear-gradient(135deg, #1f2a48 0%, #121212 100%);
+        box-shadow: 0 8px 24px rgba(102, 170, 255, 0.3);
+        border: 1px solid #2a2a2a;
     }
     .blog-post {
         background: var(--post-bg-color);
@@ -119,24 +142,29 @@
         transform: translateY(20px);
         opacity: 0;
         animation: fadeInUp 0.8s ease forwards;
-        transition: box-shadow 0.3s ease, background 0.3s ease;
+        transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.3s ease;
         width: 280px;
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
     }
     .blog-post:hover {
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+        transform: translateY(0) scale(1.05);
     }
     .post-image {
         width: 100%;
         height: 180px;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease, filter 0.3s ease;
         flex-shrink: 0;
+        border-bottom: 2px solid var(--button-bg-color);
+        border-radius: 12px 12px 0 0;
     }
     .blog-post:hover .post-image {
-        transform: scale(1.05);
+        transform: scale(1.1);
+        filter: brightness(1.1);
     }
     .post-content {
         padding: 20px 15px;
@@ -145,7 +173,8 @@
         flex-direction: column;
     }
     .post-title {
-        font-size: 1.5rem;
+        font-family: 'Merriweather', serif;
+        font-size: 1.6rem;
         color: var(--post-title-color);
         margin-bottom: 10px;
         transition: color 0.3s ease;
@@ -154,10 +183,11 @@
         color: var(--post-title-hover-color);
     }
     .post-excerpt {
+        font-family: 'Open Sans', sans-serif;
         font-size: 1rem;
         color: var(--post-excerpt-color);
         margin-bottom: 15px;
-        line-height: 1.4;
+        line-height: 1.5;
         flex-grow: 1;
     }
     .read-more {
@@ -174,6 +204,7 @@
         align-self: flex-start;
         outline: none;
         border: none;
+        text-align: center;
     }
     .read-more:hover {
         background: var(--button-bg-hover);
@@ -233,27 +264,65 @@
         background: transparent;
     }
     .posts-container::-webkit-scrollbar-thumb {
-        background: transparent;
+        background: var(--scrollbar-thumb);
         border-radius: 4px;
     }
-    </style>
-    <style>
-        footer {
-            width: 100%;
-            max-width: 1200px;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            border-top: 1px solid #ccc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body.dark-mode footer {
-            color: var(--text-color);
-            border-top: 1px solid #555;
-        }
-    </style>
+    /* Back to Top button */
+    #backToTopBtn {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        display: none;
+        background: var(--button-bg-color);
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 6px 12px var(--button-shadow);
+        font-size: 1.5rem;
+        z-index: 200;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+    #backToTopBtn:hover {
+        background: var(--button-bg-hover);
+        transform: scale(1.1);
+    }
+    footer {
+        width: 100%;
+        max-width: 1200px;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: var(--footer-text);
+        border-top: 1px solid #ccc;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--footer-bg);
+        border-radius: 0 0 16px 16px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode footer {
+        color: var(--footer-text);
+        border-top: 1px solid #555;
+    }
+    /* Social media icons in footer */
+    .social-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .social-icons a {
+        color: var(--footer-text);
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
+    .social-icons a:hover {
+        color: var(--button-bg-color);
+    }
+</style>
 </head>
 <body>
     <header>
@@ -261,7 +330,7 @@
         <button class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle dark and light mode">🌙</button>
     </header>
     <div class="posts-container" role="list" style="display:flex; flex-wrap: nowrap; overflow-x:auto; gap:30px; justify-content:flex-start;">
-        <article class="blog-post" style="animation-delay: 0.3s; flex-shrink: 0;" role="listitem">
+        <article class="blog-post" style="animation-delay: 0.3s; flex-shrink: 0;" role="listitem" tabindex="0">
             <img src="review1.avif" alt="Book Reading" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">Top 10 Must-Read Books of 2024</h2>
@@ -272,7 +341,7 @@
                 <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
             </div>
         </article>
-        <article class="blog-post" style="animation-delay: 0.5s; flex-shrink: 0;" role="listitem">
+        <article class="blog-post" style="animation-delay: 0.5s; flex-shrink: 0;" role="listitem" tabindex="0">
             <img src="review2.webp" alt="Author Interview" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">Interview with Bestselling Author Jane Doe</h2>
@@ -283,7 +352,7 @@
                 <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
             </div>
         </article>
-        <article class="blog-post" style="animation-delay: 0.7s; flex-shrink: 0;" role="listitem">
+        <article class="blog-post" style="animation-delay: 0.7s; flex-shrink: 0;" role="listitem" tabindex="0">
             <img src="review3.jpg" alt="Reading Tips" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">5 Tips to Enhance Your Reading Experience</h2>
@@ -294,7 +363,7 @@
                 <span class="read-more" tabindex="0" role="button" aria-pressed="false">Read More</span>
             </div>
         </article>
-        <article class="blog-post" style="animation-delay: 0.9s; flex-shrink: 0;" role="listitem">
+        <article class="blog-post" style="animation-delay: 0.9s; flex-shrink: 0;" role="listitem" tabindex="0">
             <img src="review4.jpg" alt="Bookstore Event" class="post-image" />
             <div class="post-content">
                 <h2 class="post-title">Upcoming Bookstore Events You Can't Miss</h2>
@@ -306,6 +375,7 @@
             </div>
         </article>
     </div>
+    <button id="backToTopBtn" aria-label="Back to top" title="Back to top">↑</button>
 <script>
     // JavaScript to toggle full content visibility on "Read More" click with animation
     document.querySelectorAll('.read-more').forEach(button => {
@@ -335,26 +405,58 @@
         });
     });
 
-    // Dark mode toggle
+    // Dark mode toggle with icon change
     const toggleBtn = document.querySelector('.theme-toggle-btn');
     const body = document.body;
 
     // Load saved theme from localStorage
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
+        toggleBtn.textContent = '☀️';
     }
 
     toggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '☀️';
         } else {
             localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙';
         }
+    });
+
+    // Sticky header shadow on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Back to Top button functionality
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
     <footer>
         <p>© 2024 Librify. All rights reserved.</p>
+        <div class="social-icons" aria-label="Social media links">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">📘</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">🐦</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">📸</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">🔗</a>
+        </div>
     </footer>
 </body>
 </html>
