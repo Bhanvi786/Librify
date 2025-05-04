@@ -34,3 +34,15 @@
     margin: 0 15px;
   }
   
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background 0.3s ease;
+  }
+  
+  nav ul li a:hover, nav ul li a.active {
+    background-color: #474787;
+    border-radius: 6px;
+  }
+  
