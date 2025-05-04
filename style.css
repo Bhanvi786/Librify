@@ -968,9 +968,10 @@ body {
 .librify-footer {
   background: rgba(44, 62, 80, 0.85);
   color: #f1f1f1;
-  padding: 36px 0 0 0;
+  padding: 16px 0 0 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   margin-top: 40px;
+  font-size: 1 rem;
 }
 .footer-content {
   display: flex;
@@ -978,26 +979,28 @@ body {
   align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 20px;
   flex-wrap: wrap;
 }
 .footer-left {
   max-width: 520px;
 }
 .footer-title {
-  font-size: 2rem;
+  font-size: 1.2 rem;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   letter-spacing: 1px;
   color: #fff;
 }
 .footer-desc {
-  font-size: 1.08rem;
+  font-size: 0.95 rem;
   line-height: 1.6;
   color: #e0e6ed;
   margin-bottom: 0;
 }
 .footer-social {
+  padding: 8px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -1025,13 +1028,13 @@ body {
 }
 .footer-bottom {
   text-align: center;
-  padding: 16px 0 8px 0;
-  font-size: 1rem;
+  padding: 8px 0 4px 0;
+  font-size: 0.95 rem;
   color: #bfc9d1;
   background: none;
   letter-spacing: 0.5px;
   border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: 28px;
+  margin-top: 15px;
 }
 @media (max-width: 700px) {
   .footer-content {
