@@ -105,6 +105,24 @@
             </div>
         </div>
     </div>
-    <script src="book1.js"></script>
+    
+<script src="cart.js"></script>
+<script>
+  // Update cart count badge in nav bar
+  function updateCartCountBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalQuantity = cart.reduce((acc, item) => acc + (item.quantity || item.qty || 0), 0);
+    const badge = document.getElementById('cartCountBadge');
+    if (badge) {
+      badge.textContent = totalQuantity;
+      badge.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+    }
+  }
+
+  // Initialize cart count badge on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCountBadge();
+  });
+</script>
 </body>
 </html>
