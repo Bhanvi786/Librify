@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Register - Bookstore</title>
+    <!-- Boxicons for icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
@@ -13,6 +15,7 @@
             height: 100%;
             font-family: 'Poppins', sans-serif;
             color: #333;
+            background: linear-gradient(120deg, #f9f9f9 60%, #e3e6f3 100%);
         }
 
         .split-container {
@@ -27,6 +30,14 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+        }
+        /* Subtle overlay for image */
+        .image-half::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(118, 75, 162, 0.18);
         }
 
         .form-half {
@@ -34,31 +45,80 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f9f9f9;
+            background: linear-gradient(120deg, #f9f9f9 60%, #e3e6f3 100%);
         }
-
         .container {
             background: #fff;
-            padding: 40px 50px;
+            padding: 35px 35px;
             border-radius: 15px;
             box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-            width: 400px;
+            width: 350px;
+            height: 727px;
             max-width: 90%;
             box-sizing: border-box;
             transition: transform 0.3s ease;
         }
 
         .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 35px rgba(0,0,0,0.3);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 25px 45px rgba(118,75,162,0.18);
         }
 
         h2 {
             text-align: center;
             margin-bottom: 30px;
             font-weight: 700;
-            color: #4b0082;
+            color: #764ba2;
             letter-spacing: 1.5px;
+            font-size: 2em;
+        }
+
+        /* Input group with icon */
+        .input-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            z-index: 2;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px 12px 44px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.2s;
+            box-sizing: border-box;
+            background: #faf9ff;
+        }
+
+        .input-group input:focus {
+            border-color: #764ba2;
+            outline: none;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.13);
+        }
+
+        /* Password toggle icon */
+        .input-group .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 1.2em;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+        .input-group .toggle-password:hover {
+            color: #764ba2;
         }
 
         label {
@@ -68,50 +128,33 @@
             color: #555;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-color: #764ba2;
-            outline: none;
-            box-shadow: 0 0 8px rgba(118, 75, 162, 0.5);
-        }
-
         .error {
             color: #e74c3c;
             font-size: 0.85em;
             margin-top: -15px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
+            min-height: 18px;
+            transition: color 0.2s;
         }
 
         button {
             width: 100%;
             padding: 14px;
-            background: #764ba2;
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
             border: none;
             border-radius: 8px;
             color: white;
             font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.09);
+            transition: transform 0.15s, background 0.3s;
         }
 
         button:hover {
-            background: #5a357a;
+            transform: translateY(-2px) scale(1.03);
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         }
 
         .success-message {
@@ -120,24 +163,73 @@
             margin-top: 20px;
             font-weight: 700;
             font-size: 1em;
+            min-height: 24px;
+            transition: color 0.2s;
         }
 
         .login-link {
             text-align: center;
             margin-top: 20px;
-            font-size: 0.95em;
+            font-size: 0.98em;
         }
 
         .login-link a {
             color: #764ba2;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .login-link a:hover {
             color: #5a357a;
             text-decoration: underline;
+        }
+
+        /* Social buttons */
+        .social-signup {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            background: #f5f5f5;
+            color: #555;
+            box-shadow: 0 2px 8px rgba(118, 75, 162, 0.07);
+            transition: background 0.2s, color 0.2s;
+        }
+        .social-btn:hover {
+            background: #e3e6f3;
+            color: #764ba2;
+        }
+        .social-btn i {
+            font-size: 1.3em;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .split-container {
+                flex-direction: column;
+            }
+            .image-half {
+                display: none;
+            }
+            .form-half {
+                flex: unset;
+                min-height: 100vh;
+            }
+            .container {
+                margin: 32px 0;
+            }
         }
     </style>
 </head>
@@ -147,26 +239,42 @@
         <div class="form-half">
             <div class="container">
                 <h2>Create Your Account</h2>
+                <!-- Social signup (visual only, not functional) -->
+                <div class="social-signup">
+                    <button class="social-btn" type="button"><i class='bx bxl-google'></i> Google</button>
+                    <button class="social-btn" type="button"><i class='bx bxl-facebook-circle'></i> Facebook</button>
+                </div>
                 <form id="registerForm" novalidate>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required />
+                    <div class="input-group">
+                        <i class='bx bx-user'></i>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required />
+                    </div>
                     <div class="error" id="usernameError"></div>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                    <div class="input-group">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                    </div>
                     <div class="error" id="emailError"></div>
 
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6" />
+                    <div class="input-group">
+                        <i class='bx bx-lock'></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6" />
+                        <i class='bx bx-show toggle-password' id="togglePassword" style="right: 40px;"></i>
+                    </div>
                     <div class="error" id="passwordError"></div>
 
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required />
+                    <div class="input-group">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required />
+                        <i class='bx bx-show toggle-password' id="toggleConfirmPassword" style="right: 40px;"></i>
+                    </div>
                     <div class="error" id="confirmPasswordError"></div>
 
                     <button type="submit">Register</button>
                 </form>
                 <div class="success-message" id="successMessage"></div>
+                <!-- Login link is now inside the container, below the form and success message -->
                 <div class="login-link">
                     Already have an account? <a href="loginpagee.html">Login here</a>
                 </div>
@@ -174,6 +282,20 @@
         </div>
     </div>
     <script>
+        // Password visibility toggle
+        function setupPasswordToggle(inputId, toggleId) {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            let visible = false;
+            toggle.addEventListener('click', function() {
+                visible = !visible;
+                input.type = visible ? 'text' : 'password';
+                toggle.className = visible ? 'bx bx-hide toggle-password' : 'bx bx-show toggle-password';
+            });
+        }
+        setupPasswordToggle('password', 'togglePassword');
+        setupPasswordToggle('confirmPassword', 'toggleConfirmPassword');
+
         function getUsers() {
             const users = localStorage.getItem('users');
             return users ? JSON.parse(users) : [];

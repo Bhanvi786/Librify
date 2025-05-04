@@ -91,5 +91,97 @@ nextBtn.addEventListener('click', () => {
 
 window.addEventListener('resize', updateCarousel);
 
-updateCarousel();
+const books = [
+  { title: "Atomic Habits", author: "James Clear", page: "book1.html", image: "Images/book1.jpg" },
+  { title: "Rich Dad Poor Dad", author: "Robert T. Kiyosaki", page: "book2.html", image: "Images/book2.jpg" },
+  { title: "Grandma's Bag of Stories", author: "Sudha Murty", page: "book3.html", image: "Images/book3.jpeg" },
+  { title: "Onyx Storm", author: "Rebecca Yarros", page: "book4.html", image: "Images/book4.jpeg" },
+  { title: "Invisible Helix", author: "Keigo Higashino", page: "book5.html", image: "Images/book6.jpg" },
+  { title: "How AI Works", author: "Unknown", page: "book6.html", image: "Images/book7.jpg" }
+];
 
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+const searchForm = document.getElementById('searchForm');
+
+// Filter books based on search query
+function filterBooks(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return books.filter(book =>
+    book.title.toLowerCase().includes(q) ||
+    book.author.toLowerCase().includes(q)
+  );
+}
+
+// Render dropdown with images
+function renderDropdown(results) {
+  if (!results.length) {
+    searchDropdown.innerHTML = `<ul><li style="color:#888;cursor:default;">No books found.</li></ul>`;
+    searchDropdown.style.display = 'block';
+    return;
+  }
+  searchDropdown.innerHTML = `<ul>` + results.map(book =>
+    `<li tabindex="0" data-page="${book.page}" class="book-item">
+      <div class="book-image">
+        <img src="${book.image}" alt="${book.title}" width="40">
+      </div>
+      <div class="book-info">
+        <span class="book-title">${book.title}</span>
+        <span class="book-author">by ${book.author}</span>
+      </div>
+    </li>`
+  ).join('') + `</ul>`;
+  searchDropdown.style.display = 'block';
+}
+
+function hideDropdown() {
+  searchDropdown.style.display = 'none';
+}
+
+// Show dropdown as user types
+searchInput.addEventListener('input', function() {
+  const val = this.value;
+  const results = filterBooks(val);
+  if (val.trim()) {
+    renderDropdown(results);
+  } else {
+    hideDropdown();
+  }
+});
+
+// Handle search button click / form submission
+searchForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const val = searchInput.value.trim();
+  if (val) {
+    const results = filterBooks(val);
+    renderDropdown(results);
+  } else {
+    hideDropdown();
+  }
+});
+
+// Navigate to book page when clicked in dropdown
+searchDropdown.addEventListener('click', function(e) {
+  const li = e.target.closest('li[data-page]');
+  if (li) {
+    window.location.href = li.getAttribute('data-page');
+  }
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!searchDropdown.contains(e.target) && !searchForm.contains(e.target)) {
+    hideDropdown();
+  }
+});
+
+// Show dropdown on focus if input has value
+searchInput.addEventListener('focus', function() {
+  const val = this.value;
+  if (val.trim()) {
+    renderDropdown(filterBooks(val));
+  }
+});
