@@ -111,13 +111,7 @@
       <aside class="product-actions">
         <form id="orderForm" autocomplete="off">
           <label for="quantity" class="quantity-label">Quantity:</label>
-          <select id="quantity" name="quantity" class="quantity-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <input type="number" id="quantity" name="quantity" class="quantity-select" min="1" value="1" />
           <button type="button" class="btn add-cart" id="addCartBtn">Add to Cart</button>
           <button type="button" class="btn buy-now" id="buyNowBtn">Buy Now</button>
           <button type="button" class="btn wishlist" id="wishlistBtn">Add to Wishlist</button>
