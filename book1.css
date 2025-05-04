@@ -79,7 +79,7 @@ body {
     gap: 6px;
 }
 .rating-value {
-    color: #d32f2f;
+    color: #18a6a6;
     font-weight: bold;
 }
 .stars {
@@ -171,7 +171,7 @@ hr {
     gap: 18px;
     margin-top: 16px;
     margin-bottom: 18px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .feature {
     display: flex;
@@ -180,11 +180,10 @@ hr {
     font-size: 13px;
     color: #2176ae;
     min-width: 80px;
-    text-align: center;
 }
 .feature img {
     width: 32px;
-    margin-bottom: 0;
+    margin-bottom: 4px;
 }
 
 .right-section {
@@ -215,8 +214,9 @@ hr {
     padding: 5px 10px;
     font-size: 15px;
     border-radius: 5px;
-    border: 1px solid #bdbdbd;
+    border: 1px solid #18a6a6;
     width: 60px;
+    background: #fff;
 }
 .action-box button {
     font-size: 16px;

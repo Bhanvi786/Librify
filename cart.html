@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px 30px;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: 1.2px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .cart-item:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .cart-item img {
+      width: 120px;
+      height: 160px;
+      object-fit: cover;
+      margin-right: 25px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .cart-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 160px;
+    }
+    .cart-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #004080;
+    }
+    
+    .cart-qty button {
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #007bff;
+      background: #e6f0ff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .cart-qty button:hover {
+      background: #cce0ff;
+    }
+    .cart-qty input {
+      width: 50px;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px;
+      background: #f9faff;
+      font-weight: 600;
+      color: #004080;
+    }
+    .cart-total {
+      font-weight: 700;
+      margin-left: 20px;
+      font-size: 1.2rem;
+      color: #004080;
+    }
+    .remove-btn {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      height: 40px;
+      align-self: flex-start;
+    }
+    .remove-btn:hover {
+      background: #e60000;
+    }
+    .empty-cart {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 1.5rem;
+      color: #888;
+      font-style: italic;
+    }
+    .final-amount {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: right;
+      margin-top: 40px;
+      color: #003366;
+      letter-spacing: 0.05em;
+    }
+    .checkout-btn {
+      display: block;
+      margin: 40px auto 60px auto;
+      padding: 14px 40px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      width: 240px;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .checkout-btn:hover {
+      background-color: #0056b3;
+      box-shadow: 0 8px 20px rgba(0, 86, 179, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1>My Shopping Cart</h1>
+  <div id="cart-container"></div>
+  <div id="final-amount" class="final-amount"></div>
+  <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+
+  <script>
+    let cart = [];
+
+    window.addEventListener('load', () => {
+      const storedCart = JSON.parse(localStorage.getItem('data'));
+      if (storedCart && storedCart.length > 0) {
+        cart = storedCart;
+      }
+      renderCart();
+    });
+
+    window.addEventListener('storage', (event) => {
+      if (event.key === 'data') {
+        cart = JSON.parse(localStorage.getItem('data')) || [];
+        renderCart();
+      }
+    });
+
+    function renderCart() {
+      const container = document.getElementById('cart-container');
+      const finalAmountDiv = document.getElementById('final-amount');
+      if (!cart.length) {
+        container.innerHTML = '<div class="empty-cart">Your cart is empty.<br>Add some books to get started!</div>';
+        finalAmountDiv.textContent = '';
+        document.getElementById('checkoutBtn').style.display = 'none';
+        return;
+      }
+      container.innerHTML = '';
+      let totalAmount = 0;
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        const itemTotal = item.price * item.item;
+        totalAmount += itemTotal;
+        itemDiv.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <div class="cart-details">
+            <div class="cart-title">${item.name}</div>
+            <div class="cart-price">₹${item.price.toLocaleString()}</div>
+            <div class="cart-qty">
+              <button onclick="changeQty(${index}, -1)">-</button>
+              <input type="text" value="${item.item}" readonly />
+              <button onclick="changeQty(${index}, 1)">+</button>
+              <span class="cart-total">Total: ₹${itemTotal.toLocaleString()}</span>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        `;
+        container.appendChild(itemDiv);
+      });
+      finalAmountDiv.textContent = `Final Amount: ₹${totalAmount.toLocaleString()}`;
+      document.getElementById('checkoutBtn').style.display = 'block';
+    }
+
+    function changeQty(index, delta) {
+      cart[index].item = Math.max(1, cart[index].item + delta);
+      saveCart();
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem('data', JSON.stringify(cart));
+    }
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      alert('Proceeding to checkout!');
+      // Add your checkout page redirection here if needed
+      // window.location.href = 'checkout.html';
+    });
+  </script>
+</body>
+</html>
