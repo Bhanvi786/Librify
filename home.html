@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
 <head>
     <link rel="stylesheet" href="chatbot.css">
 </head>
@@ -35,10 +36,18 @@
                 <li><a href="giftcard.html">Giftcards</a></li>
             </ul>
             <div class="social_icon">
-                <form class="search-form" action="#" method="GET">
-                    <input type="text" name="search" placeholder="Search books..." class="search-input" />
-                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <div class="search-container">
+                <form class="search-form" id="searchForm" autocomplete="off">
+                  <input type="text" class="search-input" id="searchInput" placeholder="Search books..." />
+                  <button type="submit" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
                 </form>
+                <div id="searchDropdown" class="search-dropdown"></div>
+              </div>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+              
+
                 <i class="fa-solid fa-heart"></i>
                 <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
             </div>
