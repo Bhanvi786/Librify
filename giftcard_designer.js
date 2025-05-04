@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 sendGiftCardBtn.addEventListener('click', () => {
-    // Remove alert and directly navigate to giftcard_amount.html
+   
     window.location.href = 'giftcard_amount.html';
   });
 });
