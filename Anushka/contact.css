@@ -40,3 +40,41 @@ section nav:hover {
     transform: scale(1.1);
     }
     
+    section nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        }
+        
+        section nav li {
+        display: inline-block;
+        padding: 0 10px;
+        position: relative;
+        }
+        
+        section nav li a {
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        padding-bottom: 4px;
+        }
+        
+        section nav li a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #089da1;
+        transition: width 0.3s ease;
+        }
+        
+        section nav li a:hover {
+        color: #089da1;
+        transform: scale(1.1);
+        text-shadow: 0 0 8px #089da1;
+        animation: glow 1.5s infinite alternate;
+        }
+        
