@@ -8,17 +8,17 @@
 <body>
     <div class="container">
         <nav class="breadcrumb">
-            Home &gt; Parenting, Family & Health &gt; Self Help & Personal Development &gt; Invisible Helix
+            Home &gt; Fiction &gt; Crime & Mystery &gt; Invisible Helix
         </nav>
         <div class="main-content">
             <div class="left-section">
-                <img src="Images/book2.jpg" alt="Invisible Helix" class="book-cover">
+                <img src="Images/book6.jpg" alt="Invisible Helix" class="book-cover">
             </div>
             <div class="center-section">
                 <h1 class="book-title">Invisible Helix</h1>
                 <div class="book-meta">
-                    By: <a href="https://en.wikipedia.org/wiki/Robert_T._Kiyosaki" target="_blank" rel="noopener noreferrer">Keigo Higashino</a> (Author) |
-                    Publisher: <a href="https://en.wikipedia.org/wiki/Plata_Publishing" target="_blank" rel="noopener noreferrer">Little, Brown Book Group</a> |
+                    By: <a href="https://en.wikipedia.org/wiki/Keigo_Higashino" target="_blank" rel="noopener noreferrer">Keigo Higashino</a> (Author) |
+                    Publisher: <a href="https://en.wikipedia.org/wiki/Little,_Brown_and_Company" target="_blank" rel="noopener noreferrer">Little, Brown Book Group</a> |
                     Paperback | Released: 30 Jan 2025
                 </div>
                 <div class="rating-row">
@@ -27,7 +27,7 @@
                     <span class="review-count">| 6 Reviews</span>
                 </div>
                 <div class="price-row">
-                    <span class="price">₹383</span>
+                    <span class="price">₹468</span>
                 </div>
                 <div class="availability-row">
                     <span class="available">Available</span>
@@ -38,6 +38,7 @@
                 </div>
                 <div class="desc-row">
                     Detective Galileo, Keigo Higashino's best loved character from The Devotion of Suspect X, returns in a case where hidden history, and impossible crime, are linked by nearly invisible threads in surprising ways.
+                </div>
                 <hr>
                 <div class="details-row">
                     <div class="detail-block">
@@ -78,12 +79,31 @@
                         <img src="https://img.icons8.com/color/36/000000/lock-2.png" alt="Secure Checkout">
                         <span>Secure Checkout</span>
                     </div>
-                <div class="feature">
-                    <img src="https://img.icons8.com/color/36/000000/money-bag.png" alt="Money back guarantee">
-                    <span>Money back guarantee</span>
-                </div><div class="feature" style="margin-left: 20px;">
-                    <img src="https://img.icons8.com/color/36/000000/delivery.png" alt="On time delivery">
-                    <span>On time delivery</span>
-                </div>
+                    <div class="feature">
+                        <img src="https://img.icons8.com/color/36/000000/money-bag.png" alt="Money back guarantee">
+                        <span>Money back guarantee</span>
+                    </div>
+                    <div class="feature">
+                        <img src="https://img.icons8.com/color/36/000000/delivery.png" alt="On time delivery">
+                        <span>On time delivery</span>
+                    </div>
                 </div>
             </div>
+            <div class="right-section">
+                <div class="action-box">
+                    <label for="quantity">Quantity:</label>
+                    <select id="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="buy-now" onclick="buyNow()">Buy Now</button>
+                    <button class="wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+</body>
+</html>

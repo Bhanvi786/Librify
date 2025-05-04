@@ -40,14 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cardPreview.style.backgroundColor = bgColorInput.value;
   });
 
-  sendGiftCardBtn.addEventListener('click', () => {
-    alert('Gift card sent!\n\n' +
-      'Image: ' + imageSelect.options[imageSelect.selectedIndex].text + '\n' +
-      'Message: ' + (messageInput.value || '(no message)') + '\n' +
-      'Text Color: ' + textColorInput.value + '\n' +
-      'Font Size: ' + fontSizeInput.value + '\n' +
-      'Font Family: ' + fontFamilyInput.options[fontFamilyInput.selectedIndex].text + '\n' +
-      'Text Align: ' + textAlignInput.value + '\n' +
-      'Background Color: ' + bgColorInput.value);
+sendGiftCardBtn.addEventListener('click', () => {
+    // Remove alert and directly navigate to giftcard_amount.html
+    window.location.href = 'giftcard_amount.html';
   });
 });

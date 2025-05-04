@@ -66,23 +66,23 @@
       </div>
     </nav>
 
-        <span class="close" id="closeLogin">&times;</span>
-        <h2>Welcome</h2>
-        <p>To access account and manage orders</p>
-        <button class="login-signup-btn">LOGIN / SIGNUP</button>
-        <hr />
+<div id="loginModal" style="display:none; position: fixed; top: 20%; left: 50%; transform: translateX(-50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+  <span class="close" id="closeLogin" style="cursor:pointer;">&times;</span>
+  <h2>Welcome</h2>
+  <p>To access account and manage orders</p>
+  <button class="login-signup-btn">LOGIN / SIGNUP</button>
+  <hr />
 
-        <ul class="login-list">
-          <li>Orders</li>
-          <li>Wishlist</li>
-          <li>
-            <a href="giftcard.html">Gift Cards</a
-            ><span class="new-badge">New</span>
-          </li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-    </div>
+  <ul class="login-list">
+    <li>Orders</li>
+    <li>Wishlist</li>
+    <li>
+      <a href="giftcard.html">Gift Cards</a
+      ><span class="new-badge">New</span>
+    </li>
+    <li>Contact Us</li>
+  </ul>
+</div>
     <div class="main">
       <div class="main_tag">
         <h1>
@@ -100,7 +100,6 @@
       <div class="main_img">
         <img src="Images/table.png" />
       </div>
-    </div>
   </section>
   <div id="couponTrigger" class="coupon-trigger">
     <span>UPTO ₹200 OFF</span>
@@ -233,7 +232,19 @@
             </div>
           </div>
         </div>
-       
+        <div class="combo-card">
+          <a href="book6.html">
+            <img src="Images/book6.jpg" alt="Invisible Helix" />
+          </a>
+          <div class="combo-info">
+            <p class="combo-title">Invisible Helix</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 1000</span>
+              <span class="new-price">Rs 468</span>
+            </div>
+          </div>
+        </div>
       </div>
       
     </div>
@@ -246,7 +257,6 @@
       event.preventDefault();
       event.stopPropagation();
     });
-
     
     function updateCartCountBadge() {
       const cart = JSON.parse(localStorage.getItem('data')) || [];
@@ -257,15 +267,38 @@
         badge.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
       }
     }
-
     
     document.addEventListener('DOMContentLoaded', () => {
       updateCartCountBadge();
     });
-
    
     window.addEventListener('storage', () => {
       updateCartCountBadge();
+    });
+
+    // Toggle login modal visibility
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeLogin = document.getElementById('closeLogin');
+
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (loginModal.style.display === 'none' || loginModal.style.display === '') {
+        loginModal.style.display = 'block';
+      } else {
+        loginModal.style.display = 'none';
+      }
+    });
+
+    closeLogin.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+
+    // Optional: Close modal when clicking outside of it
+    window.addEventListener('click', (event) => {
+      if (event.target === loginModal) {
+        loginModal.style.display = 'none';
+      }
     });
   </script>
  
