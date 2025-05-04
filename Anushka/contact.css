@@ -192,3 +192,11 @@ button[type="submit"]:hover {
     font-size: 0.9rem;
     color: green;
 }
+
+footer {
+    background-color: #089da1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
