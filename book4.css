@@ -235,3 +235,30 @@ body, h1, h2, h3, h4, h5, h6, p, div, ul, li, nav, section, aside, main, form, l
   .add-cart {
     background: #197d3a;
     color: #fff;
+    }
+    
+  .add-cart:hover {
+    background: #145b2a;
+  }
+  .buy-now {
+    background: #c32d2d;
+    color: #fff;
+  }
+  .buy-now:hover {
+    background: #a52121;
+  }
+  .wishlist {
+    background: #fff;
+    color: #197d3a;
+    border: 1.5px solid #197d3a;
+  }
+  .wishlist:hover {
+    background: #eaf8f0;
+  }
+  #actionMessage {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #197d3a;
+    min-height: 24px;
+  }
+
