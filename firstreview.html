@@ -1,20 +1,103 @@
 <html>
     <head>
         <title>Review page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="chatbot.css">
+        <link rel="stylesheet" href="combo_section_theme.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <body>
+        <section>
+            <nav>
+                <div class="logo">
+                    <img src="Images/logo.png">
+                </div>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Featured">Featured</a></li>
+                    <li><a href="#Arrivals">Arrivals</a></li>
+                    <li><a href="#Reviews">Reviews</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="giftcard.html">Giftcards</a></li>
+                </ul>
+                <div class="social_icon">
+                    <form class="search-form" action="#" method="GET">
+                        <input type="text" name="search" placeholder="Search books..." class="search-input" />
+                        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <i class="fa-solid fa-heart"></i>
+                    <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+                    <button class="theme-toggle-btn" aria-label="Toggle dark and light mode" title="Toggle dark and light mode" style="background: #089da1; border: none; color: white; padding: 10px 16px; border-radius: 50%; cursor: pointer; font-weight: 700; box-shadow: 0 6px 12px rgba(8, 157, 161, 0.4); transition: background 0.4s ease, transform 0.3s ease; user-select: none; font-size: 1.4rem; line-height: 1; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 10px;">🌙</button>
+                </div>
+            </nav>
+        </section>
+    <style>
+        body.dark-mode {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+        body.dark-mode .reviews {
+            background: #1e1e1e !important;
+        }
+        body.dark-mode .review_card {
+            background: #2a2a2a !important;
+            box-shadow: 0 8px 20px rgba(102, 170, 255, 0.3) !important;
+        }
+        body.dark-mode .review_card:hover {
+            box-shadow: 0 14px 28px rgba(102, 170, 255, 0.5) !important;
+        }
+        body.dark-mode .review_content p {
+            color: #bbb !important;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.querySelector('.theme-toggle-btn');
+            const body = document.body;
+
+            // Load saved theme from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                toggleBtn.textContent = '☀️';
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    toggleBtn.textContent = '☀️';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    toggleBtn.textContent = '🌙';
+                }
+            });
+        });
+    </script>
         <style>
             /* Global Review Section Styling */
-            body {
+html, body, section, nav {
+    margin: 0;
+    padding: 0;
+}
+
+section, nav {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+}
+
+nav ul {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+body {
             background-image: url(bg.png);
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
-        }
 .reviews {
     width: 100%;
-    padding: 60px 20px;
+    padding: 130px 0 0 0;
     background: url(abcd.jpg) no-repeat center center/cover;
     font-family: 'Poppins', sans-serif;
     position: relative;
@@ -27,7 +110,8 @@
     text-align: center;
     font-size: 42px;
     color: #344e41;
-    margin-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
@@ -41,7 +125,7 @@
 
 /* Each Review Card */
 .review_card {
-    background: #EFD3D6;
+    background: #2c3e50;
     width: 300px;
     padding: 25px 20px;
     border-radius: 24px;
@@ -82,14 +166,14 @@
 .card_content h2 {
     font-size: 18px;
     font-weight: 600;
-    color: #344e41;
+    color: pin;
     margin-bottom: 10px;
 }
 
 /* Review Text */
 .card_content p {
     font-size: 14px;
-    color: #5f7161;
+    color:white;
     line-height: 1.6;
 }
 
@@ -118,6 +202,74 @@
 
 }
 
+        </style>
+        <style>
+/* Additional Review Form Styling */
+.review-form {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+            .review-form h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #344e41;
+            }
+            .review-form label {
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 600;
+                color: #344e41;
+            }
+            .review-form input[type="email"],
+            .review-form input[type="text"],
+            .review-form textarea,
+            .review-form select {
+                width: 100%;
+                padding: 10px 12px;
+                margin-bottom: 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif;
+                transition: border-color 0.3s ease;
+            }
+            .review-form input[type="email"]:focus,
+            .review-form input[type="text"]:focus,
+            .review-form textarea:focus,
+            .review-form select:focus {
+                border-color: #344e41;
+                outline: none;
+            }
+            .review-form textarea {
+                resize: vertical;
+                min-height: 80px;
+            }
+            .review-form .error-message {
+                color: #d9534f;
+                font-size: 13px;
+                margin-top: -8px;
+                margin-bottom: 12px;
+                display: none;
+            }
+            .review-form button[type="submit"] {
+                background-color: #344e41;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+            .review-form button[type="submit"]:hover {
+                background-color: #2a3a2f;
+            }
         </style>
 <div class="reviews">
     <h1>What People Say</h1>
@@ -204,5 +356,110 @@
 </div>
 
 </div>
+
+<form class="review-form" id="reviewForm" novalidate>
+    <h2>Submit Your Review</h2>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <div class="error-message" id="emailError">Please enter a valid email.</div>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required minlength="3" />
+    <div class="error-message" id="usernameError">Please enter your username (at least 3 characters).</div>
+
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" required minlength="10"></textarea>
+    <div class="error-message" id="reviewError">Please enter your review (at least 10 characters).</div>
+
+    <label for="rating">Star Rating:</label>
+    <select id="rating" name="rating" required>
+        <option value="">Select rating</option>
+        <option value="5">★★★★★ (5 stars)</option>
+        <option value="4">★★★★ (4 stars)</option>
+        <option value="3">★★★ (3 stars)</option>
+        <option value="2">★★ (2 stars)</option>
+        <option value="1">★ (1 star)</option>
+    </select>
+    <div class="error-message" id="ratingError">Please select a star rating.</div>
+
+    <button type="submit">Submit Review</button>
+</form>
+
+<script>
+    (function() {
+        const form = document.getElementById('reviewForm');
+        const email = form.email;
+        const username = form.username;
+        const review = form.review;
+        const rating = form.rating;
+
+        const emailError = document.getElementById('emailError');
+        const usernameError = document.getElementById('usernameError');
+        const reviewError = document.getElementById('reviewError');
+        const ratingError = document.getElementById('ratingError');
+
+        function validateEmail(email) {
+            const re = /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/;
+            return re.test(email);
+        }
+
+        function showError(input, errorElement, message) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            input.classList.add('input-error');
+        }
+
+        function hideError(input, errorElement) {
+            errorElement.style.display = 'none';
+            input.classList.remove('input-error');
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let valid = true;
+
+            // Validate email
+            if (!validateEmail(email.value.trim())) {
+                showError(email, emailError, 'Please enter a valid email.');
+                valid = false;
+            } else {
+                hideError(email, emailError);
+            }
+
+            // Validate username
+            if (username.value.trim().length < 3) {
+                showError(username, usernameError, 'Please enter your username (at least 3 characters).');
+                valid = false;
+            } else {
+                hideError(username, usernameError);
+            }
+
+            // Validate review
+            if (review.value.trim().length < 10) {
+                showError(review, reviewError, 'Please enter your review (at least 10 characters).');
+                valid = false;
+            } else {
+                hideError(review, reviewError);
+            }
+
+            // Validate rating
+            if (!rating.value) {
+                showError(rating, ratingError, 'Please select a star rating.');
+                valid = false;
+            } else {
+                hideError(rating, ratingError);
+            }
+
+            if (valid) {
+                alert('Thank you for your review!');
+                form.reset();
+            }
+        });
+    })();
+</script>
+
+
     </body>
 </html>

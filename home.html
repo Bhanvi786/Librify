@@ -1,151 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store Website</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="chatbot.css" />
+    <link rel="stylesheet" href="combo_section_theme.css" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+<head>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<head>
+    <link rel="stylesheet" href="combo_section_theme.css">
+
 </head>
 <body>
-    
-    <section>
+  <section>
+    <nav>
+      <div class="logo">
+        <img src="Images/logo.png" />
+      </div>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="online.html">Featured</a></li>
+        <li><a href="#Arrivals">Arrivals</a></li>
+        <li><a href="firstreview.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="giftcard.html">Giftcards</a></li>
+      </ul>
+      <div class="social_icon">
+        <form class="search-form" action="#" method="GET">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search books..."
+            class="search-input"
+          />
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <i class="fa-solid fa-heart"></i>
+        <a href="#cart" id="cartBtn">
+          <i class="fa-solid fa-shopping-cart"></i>
+        </a>
+        <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+       
+      </div>
+    </nav>
 
-        <nav>
-
-            <div class="logo">
-                <img src="Images/logo.png" />
-            </div>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Featured">Featured</a></li>
-                <li><a href="#Arrivals">Arrivals</a></li>
-                <li><a href="#Reviews">Reviews</a></li>
-                <li><a href="#Blog">Blog</a></li>
-            </ul>
-            <div class="social_icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-heart"></i>
-                <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </nav>
-        <div id="loginModal" class="modal">
-    <div class="modal-content">
         <span class="close" id="closeLogin">&times;</span>
         <h2>Welcome</h2>
         <p>To access account and manage orders</p>
         <button class="login-signup-btn">LOGIN / SIGNUP</button>
-        <hr>
-        <!-- THIS IS THE CRUCIAL PART: -->
+        <hr />
+
         <ul class="login-list">
-            <li>Orders</li>
-            <li>Wishlist</li>
-            <li>Gift Cards<span class="new-badge">New</span></li>
-            <li>Contact Us</li>
-            
+          <li>Orders</li>
+          <li>Wishlist</li>
+          <li>
+            <a href="giftcard.html">Gift Cards</a
+            ><span class="new-badge">New</span>
+          </li>
+          <li>Contact Us</li>
         </ul>
+      </div>
     </div>
-</div>
-        <div class="main">
+    <div class="main">
+      <div class="main_tag">
+        <h1>
+          WELCOME TO<br /><span>THE BOOK STORE</span>
+        </h1>
 
-            <div class="main_tag">
-                <h1>WELCOME TO<br><span>THE BOOK STORE</span></h1>
-
-                <p>
-                    Discover a world of stories within our curated collection of bestselling titles, timeless classics, and hidden literary treasures. Whether you're a lifelong book lover or just beginning your reading journey, there's always something new and inspiring waiting to be explored!
-                </p>
-                <a href="#" class="main_btn">Learn More</a>
-
-            </div>
-            <div class="main_img">
-                <img src="Images/table.png">
-            </div>
-
-        </div>
-
-    </section>
-
-<div class="features-strip">
-  <div class="feature-item">
-    <i class="fas fa-truck"></i>
-    <span>Free Delivery</span>
-  </div>
-  <div class="feature-divider"></div>
-  <div class="feature-item">
-    <i class="fas fa-money-bill-wave"></i>
-    <span>Cash on Delivery</span>
-  </div>
-  <div class="feature-divider"></div>
-  <div class="feature-item">
-    <i class="fas fa-certificate"></i>
-    <span>Original Products</span>
-  </div>
-  <div class="feature-divider"></div>
-  <div class="feature-item">
-    <i class="fas fa-retweet"></i>
-    <span>Easy Replacement</span>
-  </div>
-</div>
-
-    <div class="deals-row">
-        <div class="deals-timer-card">
-            <div class="timer">
-                <div>
-                    <span class="time-val" id="hours">03</span>
-                    <span class="time-label">Hrs</span>
-                </div>
-                <div>
-                    <span class="time-val" id="minutes">28</span>
-                    <span class="time-label">Mins</span>
-                </div>
-                <div>
-                    <span class="time-val" id="seconds">03</span>
-                    <span class="time-label">Secs</span>
-                </div>
-            </div>
-            <div class="deals-info">
-                <h3>Deals for the Week</h3>
-                <p>
-                    Here are some of our handpicked titles offered at a special price for a limited period.<br>
-                    Hurry the deals run out soon.
-                </p>
-            </div>
-        </div>
-        <div class="deal-books-row">
-            <div class="deal-book-card">
-                <img src="book1.jpg" alt="Book 1" class="deal-book-img">
-                <div class="deal-book-title">The Infinite Library</div>
-                <div class="deal-book-author">by Jane Doe</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹349</span>
-                    <span class="deal-book-old-price">₹499</span>
-                    <span class="deal-book-discount">(30% Off)</span>
-                </div>
-            </div>
-            <div class="deal-book-card">
-                <img src="book2.jpg" alt="Book 2" class="deal-book-img">
-                <div class="deal-book-title">Lost in Pages</div>
-                <div class="deal-book-author">by John Smith</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹279</span>
-                    <span class="deal-book-old-price">₹399</span>
-                    <span class="deal-book-discount">(30% Off)</span>
-                </div>
-            </div>
-            <div class="deal-book-card">
-                <img src="book3.jpg" alt="Book 3" class="deal-book-img">
-                <div class="deal-book-title">Mystery of Words</div>
-                <div class="deal-book-author">by Emily Clark</div>
-                <div class="deal-book-pricing">
-                    <span class="deal-book-price">₹199</span>
-                    <span class="deal-book-old-price">₹299</span>
-                    <span class="deal-book-discount">(33% Off)</span>
-                </div>
-            </div>
-        </div>
+        <p>
+          Discover a world of stories within our curated collection of bestselling
+          titles, timeless classics, and hidden literary treasures. Whether you're
+          a lifelong book lover or just beginning your reading journey, there's
+          always something new and inspiring waiting to be explored!
+        </p>
+        <a href="#" class="main_btn">Learn More</a>
+      </div>
+      <div class="main_img">
+        <img src="Images/table.png" />
+      </div>
     </div>
-    <script src="1.js"></script>
+  </section>
+  <div id="couponTrigger" class="coupon-trigger">
+    <span>UPTO ₹200 OFF</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+
+  <div id="couponPopup" class="coupon-popup">
+    <div class="coupon-popup-vertical">
+      <span>UPTO ₹200 OFF</span>
+      <span class="arrow close-arrow">&#9664;</span>
+    </div>
+    <div class="coupon-popup-content">
+      <div class="coupon-popup-main">
+        <div class="coupon-popup-left">
+          <span class="avail">Avail Upto</span>
+          <div class="off-amount">200 OFF</div>
+          <div class="coupon-row">
+            <span class="coupon-label">Coupon Code:</span>
+            <span class="coupon-code">LIBRIFYSAVE</span>
+          </div>
+          <p class="applicable">Applicable on your first order</p>
+        </div>
+        <div class="coupon-popup-right">
+          <img src="Images/coupon.png" alt="200 OFF" class="coupon-img" />
+          <button class="signup-btn" id="showCouponBtn">SIGN UP NOW ></button>
+        </div>
+      </div>
+      <script>
+        console.log("Navigation Bar Loaded");
+        console.log("Login Modal Loaded");
+        console.log("Main Content Loaded");
+        console.log("Coupon Trigger Loaded");
+        console.log("Coupon Popup Loaded");
+        console.log("Features Strip Loaded");
+      </script>
+    </div>
+
+    <div id="couponModal" class="coupon-modal">
+      <div class="coupon-modal-content">
+        <h3>Your Coupon Code</h3>
+        <div class="coupon-code">LIBRIFYSAVE</div>
+        <p>Use this code to get up to ₹200 off on your first order!</p>
+        <button class="close-btn" id="closeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="features-strip">
+    <div class="feature-item">
+      <i class="fas fa-truck"></i>
+      <span>Free Delivery</span>
+    </div>
+    <div class="feature-divider"></div>
+    <div class="feature-item">
+      <i class="fas fa-money-bill-wave"></i>
+      <span>Cash on Delivery</span>
+    </div>
+    <div class="feature-divider"></div>
+    <div class="feature-item">
+      <i class="fas fa-certificate"></i>
+      <span>Original Products</span>
+    </div>
+    <div class="feature-divider"></div>
+    <div class="feature-item">
+      <i class="fas fa-retweet"></i>
+      <span>Easy Replacement</span>
+    </div>
+   
+  </div>
+
+  
+
+  <section class="combo-section">
+    <div class="combo-header">
+      <h2>COMBO'S FOR EVERY BOOK READERS</h2>
+      <button class="view-all-btn">VIEW ALL</button>
+    </div>
+    <div class="carousel-container">
+      <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Combo Items Start -->
+        <div class="combo-card">
+          <a href="book1.html">
+            <img src="Images/book1.jpg" alt="Atomic Habits" />
+          </a>
+          <div class="combo-info">
+            <p class="combo-title">Atomic Habits</p>
+            <div class="stars">★★★★★</div>
+            <div class="price-row">
+              <span class="old-price">₹1,600</span>
+              <span class="new-price">₹1,350</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <a href="book2.html">
+            <img src="Images/book2.jpg" alt="Rich Dad Poor Dad" />
+          </a>
+          <div class="combo-info">
+            <p class="combo-title">Rich Dad Poor Dad</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">₹450</span>
+              <span class="new-price">₹383</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <a href="book3.html">
+            <img src="Images/book3.jpeg" alt="Kids Good Habits Pack" />
+          </a>
+          <div class="combo-info">
+            <p class="combo-title">Grandma's Bag of Stories</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 999</span>
+              <span class="new-price">Rs 429</span>
+            </div>
+          </div>
+        </div>
+        <div class="combo-card">
+          <a href="book4.html">
+            <img src="Images/book4.jpeg" alt="Onyx Storm" />
+          </a>
+          <div class="combo-info">
+            <p class="combo-title">Onyx Storm</p>
+            <div class="stars">★★★★☆</div>
+            <div class="price-row">
+              <span class="old-price">Rs 1599</span>
+              <span class="new-price">Rs 560</span>
+            </div>
+          </div>
+        </div>
+        <!-- Combo Items End -->
+      </div>
+      <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+
+  <div id="cartContainer" style="padding: 20px; border: 1px solid #ccc; margin: 20px;">
+    <!-- Cart items will be displayed here -->
+  </div>
+
+  <script src="1.js"></script>
+    <script>
+      document.getElementById('showCouponBtn').addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+
+      // Cart display logic for main cart section
+      function displayCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cartContainer');
+        if (!cartContainer) return;
+        cartContainer.innerHTML = '';
+        if (cart.length === 0) {
+          cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+          return;
+        }
+        cart.forEach((item) => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'cart-item';
+          itemDiv.innerHTML = `
+            <h4>${item.title}</h4>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Price: ₹${item.newPrice}</p>
+          `;
+          cartContainer.appendChild(itemDiv);
+        });
+      }
+
+      // Cart icon dropdown display logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const cartIcon = document.getElementById('cartIcon');
+        const cartDropdown = document.getElementById('cartDropdown');
+        const cartCount = document.getElementById('cartCount');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+
+        function updateCartIcon() {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+          cartItemsContainer.innerHTML = '';
+          if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+          }
+          cart.forEach((item) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item-dropdown';
+            itemDiv.style.borderBottom = '1px solid #ddd';
+            itemDiv.style.padding = '8px 0';
+            itemDiv.innerHTML = `
+              <strong>${item.title}</strong><br/>
+              Quantity: ${item.quantity}<br/>
+              Price: ₹${item.newPrice}
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+          });
+        }
+
+        cartIcon.addEventListener('click', () => {
+          if (cartDropdown.style.display === 'none' || cartDropdown.style.display === '') {
+            cartDropdown.style.display = 'block';
+          } else {
+            cartDropdown.style.display = 'none';
+          }
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+          if (!cartIcon.contains(event.target)) {
+            cartDropdown.style.display = 'none';
+          }
+        });
+
+        // Initialize cart display
+        displayCart();
+        updateCartIcon();
+      });
+    </script>
+ 
 </body>
 </html>
