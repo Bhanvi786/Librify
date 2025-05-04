@@ -718,6 +718,30 @@ nav {
   margin-top: 2px;
   display: block;
 }
+/* Additional CSS for dropdown items with images */
+.search-dropdown li.book-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-dropdown .book-image {
+  flex-shrink: 0;
+  width: 40px;
+  height: 55px;
+  overflow: hidden;
+}
+
+.search-dropdown .book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-dropdown .book-info {
+  flex: 1;
+}
+
 
 .social_icon i, .social_icon a {
   color: white;
