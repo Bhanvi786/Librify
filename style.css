@@ -1068,79 +1068,102 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin-top: 40px;
   font-size: 1 rem;
-}
-.footer-content {
+}.footer-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   flex-wrap: wrap;
+  padding-top: 0.5rem;         /* Reduced from 1.5rem */
+  padding-bottom: 4px;         /* Reduced from 10px */
+  height: auto;
 }
+
 .footer-left {
   max-width: 520px;
 }
+
 .footer-title {
-  font-size: 1.2 rem;
+  font-size: 1.15rem;          /* Slightly smaller */
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 2px;          /* Reduced from 4px */
   letter-spacing: 1px;
   color: #fff;
 }
+
 .footer-desc {
-  font-size: 0.95 rem;
-  line-height: 1.6;
+  font-size: 0.95rem;          /* Slightly smaller */
+  line-height: 1.5;            /* Reduced line height */
   color: #e0e6ed;
   margin-bottom: 0;
 }
+
 .footer-social {
-  padding: 8px;
-  font-size: 18px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-top: 8px;
+  gap: 8px;                    /* Reduced from 14px */
+  margin-top: 4px;             /* Reduced from 8px */
 }
-.footer-social .fa {
-  padding: 14px;
-  font-size: 28px;
-  width: 48px;
-  text-align: center;
-  text-decoration: none;
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;                 /* Reduced from 48px */
+  height: 36px;                /* Reduced from 48px */
+  font-size: 18px;             /* Reduced from 24px */
   border-radius: 50%;
-  background: #2c3e50;
-  color: #f1f1f1;
-  margin-right: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-.footer-social .fa-facebook { background: #3b5998; }
-.footer-social .fa-instagram { background: #c13584; }
-.footer-social .fa-twitter { background: #55acee; }
-.footer-social .fa-linkedin { background: #0077b5; }
-.footer-social .fa:hover, .footer-social .fa:focus {
-  opacity: 0.8;
   color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
+
+.footer-social a.facebook {
+  background: #3b5998;
+}
+
+.footer-social a.instagram {
+  background: #c13584;
+}
+
+.footer-social a.twitter {
+  background: #55acee;
+}
+
+.footer-social a.linkedin {
+  background: #0077b5;
+}
+
+.footer-social a:hover {
+  opacity: 0.8;
+}
+
 .footer-bottom {
   text-align: center;
-  padding: 8px 0 4px 0;
-  font-size: 0.95 rem;
+  padding: 4px 0 2px 0;        /* Reduced from 8px 0 4px 0 */
+  font-size: 0.85rem;          /* Slightly smaller */
   color: #bfc9d1;
-  background: none;
   letter-spacing: 0.5px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 10px;            /* Reduced from 20px */
 }
+
 @media (max-width: 700px) {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 16px;
+    padding: 0 8px;            /* Reduced from 16px */
+    padding-top: 0.5rem;
+    padding-bottom: 4px;
   }
+
   .footer-social {
-    margin: 16px 0 0 0;
+    margin: 8px 0 0 0;        /* Reduced from 16px */
+    gap: 8px;
   }
+
   .footer-left {
     max-width: 100%;
   }
