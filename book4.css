@@ -61,3 +61,58 @@ body, h1, h2, h3, h4, h5, h6, p, div, ul, li, nav, section, aside, main, form, l
     margin-bottom: 18px;
     background: #f3f3f3;
   }
+
+  .product-details {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 400px;
+  }
+  .product-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2e3a3a;
+    margin-bottom: 7px;
+  }
+  .product-author {
+    font-size: 1.07rem;
+    color: #4d5d5d;
+    margin-bottom: 2px;
+  }
+  .author-name {
+    color: #197d3a;
+    font-weight: 500;
+  }
+  .divider {
+    color: #b5b5b5;
+    margin: 0 6px;
+  }
+  .product-rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.08rem;
+    margin-bottom: 8px;
+  }
+  .rating-value {
+    color: #197d3a;
+    font-weight: 600;
+  }
+  .rating-stars {
+    color: #e5a800;
+    font-size: 1.2rem;
+    margin-left: 2px;
+  }
+  .star {
+    margin-right: -2px;
+  }
+  .star.half {
+    color: #e5a800;
+    opacity: 0.5;
+  }
+  .reviews-count {
+    color: #6a7a7a;
+    font-size: 1.01rem;
+    margin-left: 7px;
+  }
