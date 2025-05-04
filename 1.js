@@ -60,3 +60,36 @@ if (mainImg) {
   animate();
 }
 
+// Carousel functionality for combo section
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselTrack = document.getElementById('carouselTrack');
+
+let currentIndex = 0;
+
+function updateCarousel() {
+  const cards = carouselTrack.querySelectorAll('.combo-card');
+  const cardWidth = cards[0].offsetWidth;
+  const visibleCards = Math.floor(carouselTrack.parentElement.offsetWidth / cardWidth);
+  const maxIndex = cards.length - visibleCards;
+
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+  carouselTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+
+updateCarousel();
+
