@@ -56,10 +56,11 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <i class="fa-solid fa-heart"></i>
-        <a href="#cart" id="cartBtn">
-          <i class="fa-solid fa-shopping-cart"></i>
-        </a>
+                <a href="wishlist.html" title="Wishlist"><i class="fa-solid fa-heart"></i></a>
+<a href="cart.html" id="cartBtn" style="position: relative;">
+  <i class="fa-solid fa-shopping-cart"></i>
+  <span id="cartCountBadge" style="position: absolute; top: -8px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; display:none;">0</span>
+</a>
         <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
        
       </div>
@@ -181,7 +182,7 @@
     <div class="carousel-container">
       <button class="carousel-btn left" id="prevBtn">&#10094;</button>
       <div class="carousel-track" id="carouselTrack">
-        <!-- Combo Items Start -->
+      
         <div class="combo-card">
           <a href="book1.html">
             <img src="Images/book1.jpg" alt="Atomic Habits" />
@@ -234,94 +235,41 @@
             </div>
           </div>
         </div>
-        <!-- Combo Items End -->
+       
       </div>
-      <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+      
     </div>
   </section>
 
-  <div id="cartContainer" style="padding: 20px; border: 1px solid #ccc; margin: 20px;">
-    <!-- Cart items will be displayed here -->
-  </div>
 
   <script src="1.js"></script>
-    <script>
-      document.getElementById('showCouponBtn').addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-      });
+  <script>
+    document.getElementById('showCouponBtn').addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
 
-      // Cart display logic for main cart section
-      function displayCart() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartContainer = document.getElementById('cartContainer');
-        if (!cartContainer) return;
-        cartContainer.innerHTML = '';
-        if (cart.length === 0) {
-          cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-          return;
-        }
-        cart.forEach((item) => {
-          const itemDiv = document.createElement('div');
-          itemDiv.className = 'cart-item';
-          itemDiv.innerHTML = `
-            <h4>${item.title}</h4>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Price: ₹${item.newPrice}</p>
-          `;
-          cartContainer.appendChild(itemDiv);
-        });
+    
+    function updateCartCountBadge() {
+      const cart = JSON.parse(localStorage.getItem('data')) || [];
+      const totalQuantity = cart.reduce((acc, item) => acc + (item.item || 0), 0);
+      const badge = document.getElementById('cartCountBadge');
+      if (badge) {
+        badge.textContent = totalQuantity;
+        badge.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
       }
+    }
 
-      // Cart icon dropdown display logic
-      document.addEventListener('DOMContentLoaded', () => {
-        const cartIcon = document.getElementById('cartIcon');
-        const cartDropdown = document.getElementById('cartDropdown');
-        const cartCount = document.getElementById('cartCount');
-        const cartItemsContainer = document.getElementById('cartItemsContainer');
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCountBadge();
+    });
 
-        function updateCartIcon() {
-          const cart = JSON.parse(localStorage.getItem('cart')) || [];
-          cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
-          cartItemsContainer.innerHTML = '';
-          if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-            return;
-          }
-          cart.forEach((item) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'cart-item-dropdown';
-            itemDiv.style.borderBottom = '1px solid #ddd';
-            itemDiv.style.padding = '8px 0';
-            itemDiv.innerHTML = `
-              <strong>${item.title}</strong><br/>
-              Quantity: ${item.quantity}<br/>
-              Price: ₹${item.newPrice}
-            `;
-            cartItemsContainer.appendChild(itemDiv);
-          });
-        }
-
-        cartIcon.addEventListener('click', () => {
-          if (cartDropdown.style.display === 'none' || cartDropdown.style.display === '') {
-            cartDropdown.style.display = 'block';
-          } else {
-            cartDropdown.style.display = 'none';
-          }
-        });
-
-        // Close dropdown if clicked outside
-        document.addEventListener('click', (event) => {
-          if (!cartIcon.contains(event.target)) {
-            cartDropdown.style.display = 'none';
-          }
-        });
-
-        // Initialize cart display
-        displayCart();
-        updateCartIcon();
-      });
-    </script>
+   
+    window.addEventListener('storage', () => {
+      updateCartCountBadge();
+    });
+  </script>
  
 </body>
 </html>
