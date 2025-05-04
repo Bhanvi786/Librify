@@ -261,4 +261,45 @@ body, h1, h2, h3, h4, h5, h6, p, div, ul, li, nav, section, aside, main, form, l
     color: #197d3a;
     min-height: 24px;
   }
+  
+  @media (max-width: 1100px) {
+    .main-container {
+      max-width: 98vw;
+    }
+    .product-section {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 18px 8px;
+      gap: 20px;
+    }
+    .product-actions {
+      min-width: unset;
+      width: 100%;
+      margin-top: 18px;
+    }
+  }
+  @media (max-width: 700px) {
+    .product-section {
+      padding: 8px 2vw;
+    }
+    .product-title {
+      font-size: 1.3rem;
+    }
+    .product-image img {
+      width: 120px;
+      height: 180px;
+    }
+    .product-details {
+      min-width: unset;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: #e4eae7;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b3c3b3;
+    border-radius: 6px;
+  }
+  
 
