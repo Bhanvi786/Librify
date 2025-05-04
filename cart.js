@@ -38,14 +38,35 @@ function addToCart() {
 
   alert(`${title} (x${quantity}) added to cart.`);
 
-  // Redirect to simple_cart.html to show updated cart
-  window.location.href = 'simple_cart.html';
+  // Redirect to cart.html to show updated cart
+  window.location.href = 'cart.html';
+}
+
+function addToWishlist() {
+  // Get book details dynamically from the page
+  const titleElem = document.querySelector('.book-title');
+  const imgElem = document.querySelector('.book-cover');
+
+  const title = titleElem ? titleElem.textContent.trim() : 'Unknown Book';
+  const img = imgElem ? imgElem.src : '';
+
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  const exists = wishlist.some(item => item.name === title);
+  if (!exists) {
+    wishlist.push({
+      id: Date.now(),
+      name: title,
+      img: img,
+      item: 1
+    });
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    alert(`${title} added to wishlist.`);
+  } else {
+    alert(`${title} is already in your wishlist.`);
+  }
 }
 
 function buyNow() {
   alert('Proceeding to checkout!');
-}
-
-function addToWishlist() {
-  alert('Added to wishlist!');
 }
