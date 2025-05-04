@@ -82,3 +82,29 @@
     50% { border-color: transparent }
   }
   
+  .team-members {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .member {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .member:hover {
+    transform: scale(1.05);
+  }
+  
+  .member img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
