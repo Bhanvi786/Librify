@@ -19,6 +19,114 @@
       <span class="breadcrumb-current">Atomic Habits</span>
     </div>
   </nav>
+  <!-- Main Product Section -->
+  <main class="main-container">
+    <section class="product-section">
+      <!-- Book Image -->
+      <div class="product-image">
+        <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/65831769/opQzRwMknKOXEWQ/image.jpg" alt="Atomic Habits Book Cover">
+      </div>
+      <!-- Product Details -->
+      <div class="product-details">
+        <h1 class="product-title">Atomic Habits</h1>
+        <div class="product-author">
+          By: <span class="author-name">James Clear</span> (Author)
+          <span class="divider">|</span>
+          Publisher: Arrow
+          <span class="divider">|</span>
+          Paperback
+          <span class="divider">|</span>
+          Released: 18 Oct 2018
+        </div>
+        <div class="product-rating">
+          <span class="rating-value">4.5</span>
+          <span class="rating-stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star half">&#9733;</span>
+          </span>
+          <span class="reviews-count">| 6 Reviews</span>
+        </div>
+        <div class="product-price">&#8377;1,350</div>
+        <div class="product-availability available">Available</div>
+        <div class="product-shipping">
+          Ships within <span class="bold">18-20 Business Days</span><br>
+          Free Shipping in India and low cost Worldwide.
+        </div>
+        <div class="product-desc">
+          Transform your life with tiny changes in behaviour, starting now. People think that when you want to change your life, you need to think big.
+        </div>
+        <div class="product-meta">
+          <div class="meta-item">
+            <div class="meta-icon"><span class="icon-barcode">&#128424;</span></div>
+            <div class="meta-label">ISBN-10</div>
+            <div class="meta-value">0963270702</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><span class="icon-barcode">&#128424;</span></div>
+            <div class="meta-label">ISBN-13</div>
+            <div class="meta-value">9780963270702</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><span class="icon-weight">&#9878;</span></div>
+            <div class="meta-label">Weight (g)</div>
+            <div class="meta-value">386</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><span class="icon-dim">&#8596;</span></div>
+            <div class="meta-label">Dimention(mm)</div>
+            <div class="meta-value">129x48x196</div>
+          </div>
+        </div>
+        <div class="product-features">
+          <div class="feature">
+            <span class="feature-icon">&#9989;</span>
+            <div>Premium quality</div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">&#8635;</span>
+            <div>Easy Return</div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">&#9986;</span>
+            <div>Certified product</div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">&#128274;</span>
+            <div>Secure Checkout</div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">&#128176;</span>
+            <div>Money back guarantee</div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">&#9200;</span>
+            <div>On time delivery</div>
+          </div>
+        </div>
+      </div>
+      <!-- Actions Sidebar -->
+      <aside class="product-actions">
+        <form id="orderForm" autocomplete="off">
+          <label for="quantity" class="quantity-label">Quantity:</label>
+          <select id="quantity" name="quantity" class="quantity-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button type="button" class="btn add-cart" id="addCartBtn">Add to Cart</button>
+          <button type="button" class="btn buy-now" id="buyNowBtn">Buy Now</button>
+          <button type="button" class="btn wishlist" id="wishlistBtn">Add to Wishlist</button>
+        </form>
+        <div id="actionMessage"></div>
+      </aside>
+    </section>
+  </main>
+  
   <script src="book2.js"></script>
 </body>
 </html>
