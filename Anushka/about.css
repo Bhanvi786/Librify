@@ -18,3 +18,19 @@
     padding: 20px 0;
     text-align: center;
   }
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
