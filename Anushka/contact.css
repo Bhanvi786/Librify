@@ -170,3 +170,25 @@ form input, form textarea {
 form textarea {
     min-height: 120px;
 }
+
+
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #089da1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #089da1;
+}
+
+.form-status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: green;
+}
