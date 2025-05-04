@@ -24,3 +24,19 @@ nav {
   z-index: 10000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+section nav:hover {
+    background: rgba(44, 62, 80, 1);
+    box-shadow: 0 6px 20px rgba(8, 157, 161, 0.7);
+    }
+    
+    section nav .logo img {
+    width: 110px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    }
+    
+    section nav .logo img:hover {
+    transform: scale(1.1);
+    }
+    
