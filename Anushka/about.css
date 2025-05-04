@@ -134,3 +134,11 @@
     background-color: #474787;
   }
   
+  footer {
+    background-color: #2c2c54;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
