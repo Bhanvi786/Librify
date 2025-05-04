@@ -60,7 +60,7 @@ if (mainImg) {
   animate();
 }
 
-// Carousel functionality for combo section
+
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const carouselTrack = document.getElementById('carouselTrack');
