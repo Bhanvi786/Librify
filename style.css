@@ -606,8 +606,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 20px;
-}/* Place this in your style.css or <style> tag */
-.search-container {
+}.search-container {
   position: relative;
   display: inline-block;
 }
@@ -685,6 +684,7 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: block; /* <--- THIS LINE ENSURES VERTICAL STACKING */
 }
 
 .search-dropdown li {
@@ -717,6 +717,7 @@ nav {
   margin-top: 2px;
   display: block;
 }
+
 .social_icon i, .social_icon a {
   color: white;
   font-size: 20px;
