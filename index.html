@@ -61,27 +61,29 @@
   <i class="fa-solid fa-shopping-cart"></i>
   <span id="cartCountBadge" style="position: absolute; top: -8px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; display:none;">0</span>
 </a>
-        <a href="#login" id="loginBtn"><i class="fa-solid fa-user"></i></a>
+        <a id="loginBtn" style="cursor:pointer;"><i class="fa-solid fa-user"></i></a>
        
       </div>
     </nav>
 
-<div id="loginModal" style="display:none; position: fixed; top: 20%; left: 50%; transform: translateX(-50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
-  <span class="close" id="closeLogin" style="cursor:pointer;">&times;</span>
-  <h2>Welcome</h2>
-  <p>To access account and manage orders</p>
-  <button class="login-signup-btn">LOGIN / SIGNUP</button>
-  <hr />
+<div id="loginModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" id="closeLogin" style="cursor:pointer;">&times;</span>
+    <h2>Welcome</h2>
+    <p>To access account and manage orders</p>
+    <button class="login-signup-btn">LOGIN / SIGNUP</button>
+    <hr />
 
-  <ul class="login-list">
-    <li>Orders</li>
-    <li>Wishlist</li>
-    <li>
-      <a href="giftcard.html">Gift Cards</a
-      ><span class="new-badge">New</span>
-    </li>
-    <li>Contact Us</li>
-  </ul>
+    <ul class="login-list">
+      <li><a href="cart.html">Your Cart</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+      <li>
+        <a href="giftcard.html">Gift Cards</a
+        ><span class="new-badge">New</span>
+      </li>
+      <li><a href="Anushka/contact.html">Contact Us</a></li>
+    </ul>
+  </div>
 </div>
     <div class="main">
       <div class="main_tag">
@@ -294,25 +296,29 @@
     const loginModal = document.getElementById('loginModal');
     const closeLogin = document.getElementById('closeLogin');
 
-    loginBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (loginModal.style.display === 'none' || loginModal.style.display === '') {
-        loginModal.style.display = 'block';
-      } else {
-        loginModal.style.display = 'none';
-      }
-    });
+    if (loginBtn && loginModal && closeLogin) {
+      loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (loginModal.style.display === 'none' || loginModal.style.display === '') {
+          loginModal.style.display = 'block';
+        } else {
+          loginModal.style.display = 'none';
+        }
+      });
 
-    closeLogin.addEventListener('click', () => {
-      loginModal.style.display = 'none';
-    });
-
-    // Optional: Close modal when clicking outside of it
-    window.addEventListener('click', (event) => {
-      if (event.target === loginModal) {
+      closeLogin.addEventListener('click', () => {
         loginModal.style.display = 'none';
-      }
-    });
+      });
+
+      // Optional: Close modal when clicking outside of it
+      window.addEventListener('click', (event) => {
+        if (event.target === loginModal) {
+          loginModal.style.display = 'none';
+        }
+      });
+    } else {
+      console.error('Login modal elements not found');
+    }
   </script>
  
 </body>
