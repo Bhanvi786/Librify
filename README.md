@@ -32,7 +32,12 @@ Logo updated with gift card visuals to promote offers.
 ### 📄 HTML Pages
 - `online.html` — Main landing page  
 - `about.html` — About Librify  
-- `contact.html` — Contact form  
+- `contact.html` — Contact form
+- index.html — Landing/homepage
+booklist.html — Displays list of available books
+review.html — Book review section
+signup.html / login.html — Authentication UI pages
+README.md — You're reading it!
  
 ### 🎨 CSS Styles
 - `about.css` — About page styles  
