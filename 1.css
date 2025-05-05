@@ -9,6 +9,7 @@ body {
   width: 95%;
   max-width: 1200px;
   margin: 40px auto;
+  margin-bottom: 40px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);

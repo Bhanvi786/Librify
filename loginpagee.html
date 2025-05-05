@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login - Bookstore</title>
+    <!-- Boxicons for icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
         body, html {
             margin: 0;
@@ -14,49 +15,29 @@
             height: 100%;
             font-family: 'Poppins', sans-serif;
             color: #333;
-            background: #f0f0f5;
+            background: linear-gradient(120deg, #f9f9f9 60%, #e3e6f3 100%);
         }
 
         .split-container {
             display: flex;
             height: 100vh;
             width: 100vw;
-            overflow: hidden;
         }
 
         .image-half {
             flex: 1;
-            position: relative;
             background-image: url('Images/table.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 70, 200, 0.8));
-            z-index: 1;
-        }
-
-        .welcome-text {
             position: relative;
-            z-index: 2;
-            max-width: 300px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            line-height: 1.2;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        /* Subtle overlay for image */
+        .image-half::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(118, 75, 162, 0.18);
         }
 
         .form-half {
@@ -64,32 +45,80 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f9f9f9;
-            padding: 20px;
+            background: linear-gradient(120deg, #f9f9f9 60%, #e3e6f3 100%);
         }
-
         .container {
             background: #fff;
-            padding: 40px 50px;
+            padding: 35px 35px;
             border-radius: 15px;
             box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-            width: 320px;
+            width: 350px;
+            min-height: 400px;
             max-width: 90%;
             box-sizing: border-box;
             transition: transform 0.3s ease;
         }
 
         .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 35px rgba(0,0,0,0.3);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 25px 45px rgba(118,75,162,0.18);
         }
 
         h2 {
             text-align: center;
             margin-bottom: 30px;
             font-weight: 700;
-            color: #007bff;
+            color: #764ba2;
             letter-spacing: 1.5px;
+            font-size: 2em;
+        }
+
+        /* Input group with icon */
+        .input-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #764ba2;
+            font-size: 1.2em;
+            z-index: 2;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px 12px 44px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.2s;
+            box-sizing: border-box;
+            background: #faf9ff;
+        }
+
+        .input-group input:focus {
+            border-color: #764ba2;
+            outline: none;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.13);
+        }
+
+        /* Password toggle icon */
+        .input-group .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 1.2em;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+        .input-group .toggle-password:hover {
+            color: #764ba2;
         }
 
         label {
@@ -99,65 +128,33 @@
             color: #555;
         }
 
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 40px 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-        }
-
-        .input-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #007bff;
-            cursor: pointer;
-            font-size: 1.2em;
-            user-select: none;
-        }
-
         .error {
             color: #e74c3c;
             font-size: 0.85em;
             margin-top: -15px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
             min-height: 18px;
+            transition: color 0.2s;
         }
 
         button {
             width: 100%;
             padding: 14px;
-            background: #007bff;
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
             border: none;
             border-radius: 8px;
             color: white;
             font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.09);
+            transition: transform 0.15s, background 0.3s;
         }
 
         button:hover {
-            background: #0056b3;
-            transform: scale(1.05);
+            transform: translateY(-2px) scale(1.03);
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         }
 
         .success-message {
@@ -166,70 +163,63 @@
             margin-top: 20px;
             font-weight: 700;
             font-size: 1em;
+            min-height: 24px;
+            transition: color 0.2s;
         }
 
         .register-link {
             text-align: center;
             margin-top: 20px;
-            font-size: 0.95em;
+            font-size: 0.98em;
         }
 
         .register-link a {
-            color: #007bff;
+            color: #764ba2;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .register-link a:hover {
-            color: #0056b3;
+            color: #5a357a;
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 900px) {
             .split-container {
                 flex-direction: column;
             }
-            .image-half, .form-half {
-                flex: none;
-                width: 100%;
-                height: 50vh;
+            .image-half {
+                display: none;
+            }
+            .form-half {
+                flex: unset;
+                min-height: 100vh;
             }
             .container {
-                width: 90%;
-                padding: 30px 20px;
-            }
-            .welcome-text {
-                font-size: 2em;
-                max-width: 90%;
-                padding: 0 10px;
+                margin: 32px 0;
             }
         }
     </style>
 </head>
 <body>
     <div class="split-container">
-        <div class="image-half">
-            <div class="image-overlay"></div>
-            <div class="welcome-text">
-                Login to Your Account
-            </div>
-        </div>
+        <div class="image-half"></div>
         <div class="form-half">
             <div class="container">
                 <h2>Login to Your Account</h2>
                 <form id="loginForm" novalidate>
-                    <label for="email">Email</label>
                     <div class="input-group">
+                        <i class='bx bx-envelope'></i>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required />
-                        <i class="fa fa-envelope input-icon"></i>
                     </div>
                     <div class="error" id="emailError"></div>
 
-                    <label for="password">Password</label>
                     <div class="input-group">
+                        <i class='bx bx-lock'></i>
                         <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                        <i class="fa fa-eye input-icon" id="togglePassword" title="Show/Hide Password"></i>
+                        <i class='bx bx-show toggle-password' id="togglePassword" style="right: 15px;"></i>
                     </div>
                     <div class="error" id="passwordError"></div>
 
@@ -242,8 +232,20 @@
             </div>
         </div>
     </div>
-
     <script>
+        // Password visibility toggle
+        function setupPasswordToggle(inputId, toggleId) {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            let visible = false;
+            toggle.addEventListener('click', function() {
+                visible = !visible;
+                input.type = visible ? 'text' : 'password';
+                toggle.className = visible ? 'bx bx-hide toggle-password' : 'bx bx-show toggle-password';
+            });
+        }
+        setupPasswordToggle('password', 'togglePassword');
+
         function getUsers() {
             const users = localStorage.getItem('users');
             return users ? JSON.parse(users) : [];
@@ -301,16 +303,6 @@
             // Successful login
             document.getElementById('successMessage').textContent = 'Login successful!';
             this.reset();
-        });
-
-        // Show/hide password toggle
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('password');
-
-        togglePassword.addEventListener('click', function() {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye-slash');
         });
     </script>
 </body>
