@@ -90,15 +90,18 @@ nextBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarousel);
-
 const books = [
   { title: "Atomic Habits", author: "James Clear", page: "book1.html", image: "Images/book1.jpg" },
   { title: "Rich Dad Poor Dad", author: "Robert T. Kiyosaki", page: "book2.html", image: "Images/book2.jpg" },
   { title: "Grandma's Bag of Stories", author: "Sudha Murty", page: "book3.html", image: "Images/book3.jpeg" },
   { title: "Onyx Storm", author: "Rebecca Yarros", page: "book4.html", image: "Images/book4.jpeg" },
   { title: "Invisible Helix", author: "Keigo Higashino", page: "book5.html", image: "Images/book6.jpg" },
-  { title: "How AI Works", author: "Unknown", page: "book6.html", image: "Images/book7.jpg" }
+  { title: "How AI Works", author: "Unknown", page: "book6.html", image: "Images/book7.jpg" },
+  { title: "The Science of Self-Discipline", author: "Peter Hollins", page: "book5.html", image: "book5.jpg" },
+  { title: "Rewire Your Anxious Brain", author: "Nick Trenton", page: "book8.html", image: "book8.jpg" },
+  { title: "House of Glass", author: "Sarah Pekkanen", page: "book9.html", image: "book9.jpg" }
 ];
+
 
 
 const searchInput = document.getElementById('searchInput');
