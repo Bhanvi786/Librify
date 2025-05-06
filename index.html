@@ -45,8 +45,9 @@
         <li><a href="Anushka/contact.html">Contact us</a></li>
       </ul>
       <div class="social_icon">
-        <form class="search-form" action="#" method="GET">
+        <form id="searchForm" class="search-form" action="#" method="GET">
           <input
+            id="searchInput"
             type="text"
             name="search"
             placeholder="Search books..."
@@ -56,6 +57,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        <div id="searchDropdown" class="search-dropdown" style="display:none; position:absolute; background:#fff; border:1px solid #ccc; max-height:200px; overflow-y:auto; width:200px; z-index:1000;"></div>
                 <a href="wishlist.html" title="Wishlist"><i class="fa-solid fa-heart"></i></a>
 <a href="cart.html" id="cartBtn" style="position: relative;">
   <i class="fa-solid fa-shopping-cart"></i>
