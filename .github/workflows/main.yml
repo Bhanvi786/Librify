@@ -3,15 +3,12 @@ product:
   author:
     name: "James Clear"
     link: "https://en.wikipedia.org/wiki/James_Clear"
-  publisher:
-    name: "Arrow"
-    link: "https://en.wikipedia.org/wiki/Arrow_Books"
   format: "Paperback"
   release_date: "2018-10-18"
   rating:
-    value: 4
-    stars: 4
-    reviews: 5
+    value: 5
+    stars: 6
+    reviews: 8
   price: "₹1,350"
   availability: "Available"
   shipping:
