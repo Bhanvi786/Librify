@@ -9,15 +9,14 @@ product:
   format: "Paperback"
   release_date: "2018-10-18"
   rating:
-    value: 4.5
-    stars: 5
-    reviews: 6
+    value: 4
+    stars: 4
+    reviews: 5
   price: "₹1,350"
   availability: "Available"
   shipping:
-    estimate: "18-20 Business Days"
-    details: "Free Shipping in India and low cost Worldwide."
-  description: "Transform your life with tiny changes in behaviour, starting now. People think that when you want to change your life, you need to think big."
+    estimate: "10-15 Business Days"
+    
   image: "Images/book1.jpg"
   breadcrumbs:
     - "Home"
