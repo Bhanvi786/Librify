@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Book Haven</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    
+    <section>
+        <nav>
+            <div class="logo">
+            </div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="online.html">Featured</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="firstreview.html">Reviews</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="giftcard_designer.html">Giftcards</a></li>
+            </ul>
+      </nav>
+    </section>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Fill out the form below and we’ll get back to you shortly.</p>
+             
+            <form id="contactForm" action="https://formspree.io/f/meogawwl" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            
+                <button type="submit">Send Message</button>
+                <p class="form-status" id="formStatus"></p>
+            </form>
+            
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Book Haven. All rights reserved.</p>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>
+

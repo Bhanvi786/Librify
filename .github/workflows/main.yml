@@ -1,0 +1,52 @@
+product:
+  title: "Atomic Habits"
+  author:
+    name: "James Clear"
+    link: "https://en.wikipedia.org/wiki/James_Clear"
+  format: "Paperback"
+  release_date: "2018-10-18"
+  rating:
+    value: 5
+    stars: 6
+    reviews: 8
+  price: "₹1,350"
+  availability: "Available"
+  shipping:
+    estimate: "10-15 Business Days"
+    
+  image: "Images/book1.jpg"
+  breadcrumbs:
+    - "Home"
+    - "Parenting, Family & Health"
+    - "Self Care & Development"
+    - "Atomic Habits"
+  details:
+    isbn_10: "0963270702"
+    isbn_13: "9780963270702"
+    weight_gr: 386
+    dimension_mm: "129x48x196"
+  features:
+    - icon: "https://img.icons8.com/color/36/000000/medal2.png"
+      label: "Premium quality"
+    - icon: "https://img.icons8.com/color/36/000000/return-purchase.png"
+      label: "Easy Return"
+    - icon: "https://img.icons8.com/color/36/000000/verified-badge.png"
+      label: "Certified product"
+    - icon: "https://img.icons8.com/color/36/000000/lock-2.png"
+      label: "Secure Checkout"
+    - icon: "https://img.icons8.com/color/36/000000/money-bag.png"
+      label: "Money back guarantee"
+    - icon: "https://img.icons8.com/color/36/000000/delivery.png"
+      label: "On time delivery"
+  actions:
+    quantity_options: [1, 2, 3]
+    buttons:
+      - label: "Add to Cart"
+        action: "addToCart()"
+      - label: "Buy Now"
+        action: "buyNow()"
+      - label: "Add to Wishlist"
+        action: "addToWishlist()"
+  scripts:
+    - "cart.js"
+    - inline_update_cart_badge: true
