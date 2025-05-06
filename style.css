@@ -668,8 +668,8 @@ nav {
 .search-dropdown {
   display: none;
   position: absolute;
-  top: 52px;
-  right: 0;
+  top: 80px;
+  right: 290px;
   min-width: 300px;
   max-width: 350px;
   background: #fff;
