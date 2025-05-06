@@ -1,0 +1,100 @@
+page:
+  title: "Login - Bookstore"
+  language: "en"
+  meta:
+    charset: "UTF-8"
+    viewport: "width=device-width, initial-scale=1"
+
+  styles:
+    fonts:
+      - "Poppins:300,500,700"
+    external_stylesheets:
+      - "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    layout:
+      body:
+        font: "Poppins, sans-serif"
+        background: "linear-gradient(120deg, #f9f9f9 60%, #e3e6f3 100%)"
+      split-container:
+        display: "flex"
+        height: "101vh"
+      image-half:
+        background: "Images/table.png"
+        overlay: "rgba(119, 75, 162, 0.18)"
+      form-half:
+        align: "center"
+        background: "same as body"
+      container:
+        background: "#fff"
+        padding: "35px"
+        border-radius: "15px"
+        shadow: "0 15px 25px rgba(0,0,0,0.5)"
+        width: "350px"
+        hover:
+          transform: "translateY(-10px) scale(1.01)"
+          shadow: "0 25px 45px rgba(118,75,162,0.18)"
+    inputs:
+      style:
+        icon-position: "left"
+        padding-left: "44px"
+        border: "2px solid #ddd"
+        focus-border: "#764ba2"
+    button:
+      background: "linear-gradient(90deg, #764ba2 0%, #667eea 100%)"
+      hover-background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+
+  layout:
+    split-container:
+      - image-half
+      - form-half:
+          container:
+            header: "Login to Your Account"
+            form:
+              id: "loginForm"
+              fields:
+                - email:
+                    icon: "bx bx-envelope"
+                    type: "email"
+                    placeholder: "Enter your email"
+                - password:
+                    icon: "bx bx-lock"
+                    type: "password"
+                    placeholder: "Enter your password"
+                    toggle-icon: "bx bx-show"
+              button:
+                type: "submit"
+                text: "Login"
+            messages:
+              success: "id: successMessage"
+              errors:
+                - emailError
+                - passwordError
+            link:
+              text: "Don't have an account?"
+              href: "register_page.html"
+
+  script:
+    password_toggle:
+      function: "setupPasswordToggle"
+      ids:
+        inputId: "password"
+        toggleId: "togglePassword"
+    form_validation:
+      form_id: "loginForm"
+      events:
+        - prevent_default: true
+        - validation:
+            fields:
+              email:
+                required: true
+                regex: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+              password:
+                required: true
+        - user_check:
+            storage: "localStorage"
+            key: "users"
+            validation:
+              - check_email_exists
+              - match_password
+        - on_success:
+            show: "Login successful!"
+            reset_form: true
