@@ -1,1 +1,1 @@
-/* Removed selection JS as per revert request */
+

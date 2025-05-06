@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Register - Bookstore</title>
-    <!-- Boxicons for icons -->
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
@@ -32,7 +32,7 @@
             background-repeat: no-repeat;
             position: relative;
         }
-        /* Subtle overlay for image */
+     
         .image-half::before {
             content: "";
             position: absolute;
@@ -73,7 +73,7 @@
             font-size: 2em;
         }
 
-        /* Input group with icon */
+        
         .input-group {
             position: relative;
             margin-bottom: 22px;
@@ -105,7 +105,7 @@
             box-shadow: 0 0 8px rgba(118, 75, 162, 0.13);
         }
 
-        /* Password toggle icon */
+       
         .input-group .toggle-password {
             position: absolute;
             right: 15px;
@@ -185,7 +185,7 @@
             text-decoration: underline;
         }
 
-        /* Social buttons */
+        
         .social-signup {
             display: flex;
             justify-content: center;
@@ -215,7 +215,7 @@
             font-size: 1.3em;
         }
 
-        /* Responsive */
+        
         @media (max-width: 900px) {
             .split-container {
                 flex-direction: column;
@@ -239,7 +239,7 @@
         <div class="form-half">
             <div class="container">
                 <h2>Create Your Account</h2>
-                <!-- Social signup (visual only, not functional) -->
+                
                 <div class="social-signup">
                     <button class="social-btn" type="button"><i class='bx bxl-google'></i> Google</button>
                     <button class="social-btn" type="button"><i class='bx bxl-facebook-circle'></i> Facebook</button>
@@ -274,7 +274,7 @@
                     <button type="submit">Register</button>
                 </form>
                 <div class="success-message" id="successMessage"></div>
-                <!-- Login link is now inside the container, below the form and success message -->
+              
                 <div class="login-link">
                     Already have an account? <a href="loginpagee.html">Login here</a>
                 </div>
@@ -282,7 +282,7 @@
         </div>
     </div>
     <script>
-        // Password visibility toggle
+ 
         function setupPasswordToggle(inputId, toggleId) {
             const input = document.getElementById(inputId);
             const toggle = document.getElementById(toggleId);
@@ -310,7 +310,7 @@
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Clear previous errors
+            
             document.getElementById('usernameError').textContent = '';
             document.getElementById('emailError').textContent = '';
             document.getElementById('passwordError').textContent = '';
@@ -324,13 +324,13 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
 
-            // Username validation
+            
             if (username === '') {
                 document.getElementById('usernameError').textContent = 'Username is required.';
                 isValid = false;
             }
 
-            // Email validation
+          
             if (email === '') {
                 document.getElementById('emailError').textContent = 'Email is required.';
                 isValid = false;
@@ -342,7 +342,7 @@
                 }
             }
 
-            // Password validation
+            
             if (password === '') {
                 document.getElementById('passwordError').textContent = 'Password is required.';
                 isValid = false;
@@ -351,7 +351,7 @@
                 isValid = false;
             }
 
-            // Confirm password validation
+           
             if (confirmPassword === '') {
                 document.getElementById('confirmPasswordError').textContent = 'Please confirm your password.';
                 isValid = false;
@@ -361,14 +361,14 @@
             }
 
             if (isValid) {
-                // Check if email already registered
+                
                 const users = getUsers();
                 if (users.some(user => user.email === email)) {
                     document.getElementById('emailError').textContent = 'Email is already registered.';
                     return;
                 }
 
-                // Save user to localStorage
+               
                 saveUser({ username, email, password });
                 document.getElementById('successMessage').textContent = 'Registration successful! You can now login.';
                 this.reset();
