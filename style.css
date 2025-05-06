@@ -768,11 +768,25 @@ modal-content,
 
 .login-list li {
   color: #222 !important;
+}.custom-btn {
+  background-color: #17b6b1;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  width: 150px; /* Ensures both buttons are the same width */
+  text-align: center;
 }
 
-.login-signup-btn {
-  color: #fff !important; /* keep button text white */
+.custom-btn:hover {
+  background-color: #13918d;
 }
+
+
 
 .new-badge {
   color: #fff !important; /* keep badge text white */
