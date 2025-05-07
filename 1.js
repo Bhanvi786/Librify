@@ -108,7 +108,6 @@ const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
 const searchForm = document.getElementById('searchForm');
 
-// Filter books based on search query
 function filterBooks(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
@@ -118,7 +117,7 @@ function filterBooks(query) {
   );
 }
 
-// Render dropdown with images
+
 function renderDropdown(results) {
   if (!results.length) {
     searchDropdown.innerHTML = `<ul><li style="color:#888;cursor:default;">No books found.</li></ul>`;
@@ -143,7 +142,7 @@ function hideDropdown() {
   searchDropdown.style.display = 'none';
 }
 
-// Show dropdown as user types
+
 searchInput.addEventListener('input', function() {
   const val = this.value;
   const results = filterBooks(val);
@@ -154,7 +153,7 @@ searchInput.addEventListener('input', function() {
   }
 });
 
-// Handle search button click / form submission
+
 searchForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const val = searchInput.value.trim();
@@ -166,7 +165,7 @@ searchForm.addEventListener('submit', function(e) {
   }
 });
 
-// Navigate to book page when clicked in dropdown
+
 searchDropdown.addEventListener('click', function(e) {
   const li = e.target.closest('li[data-page]');
   if (li) {
@@ -174,14 +173,14 @@ searchDropdown.addEventListener('click', function(e) {
   }
 });
 
-// Hide dropdown when clicking outside
+
 document.addEventListener('click', function(e) {
   if (!searchDropdown.contains(e.target) && !searchForm.contains(e.target)) {
     hideDropdown();
   }
 });
 
-// Show dropdown on focus if input has value
+
 searchInput.addEventListener('focus', function() {
   const val = this.value;
   if (val.trim()) {

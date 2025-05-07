@@ -186,8 +186,6 @@
 
   <section class="combo-section">
     <div class="combo-header">
-      <h2>COMBO'S FOR EVERY BOOK READERS</h2>
-     
     </div>
     <div class="carousel-container">
       <button class="carousel-btn left" id="prevBtn">&#10094;</button>
@@ -361,7 +359,6 @@
       updateCartCountBadge();
     });
 
-    // Toggle login modal visibility
     const loginBtn = document.getElementById('loginBtn');
     const loginModal = document.getElementById('loginModal');
     const closeLogin = document.getElementById('closeLogin');
@@ -380,7 +377,6 @@
         loginModal.style.display = 'none';
       });
 
-      // Optional: Close modal when clicking outside of it
       window.addEventListener('click', (event) => {
         if (event.target === loginModal) {
           loginModal.style.display = 'none';

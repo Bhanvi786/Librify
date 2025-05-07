@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatbotContainer.classList.add('chatbot-closed');
   });
 
-  //
+
   function appendMessage(message, sender) {
     const messageElem = document.createElement('div');
     messageElem.classList.add('chatbot-message', sender);

@@ -57,7 +57,6 @@
             const toggleBtn = document.querySelector('.theme-toggle-btn');
             const body = document.body;
 
-            // Load saved theme from localStorage
             if (localStorage.getItem('theme') === 'dark') {
                 body.classList.add('dark-mode');
                 toggleBtn.textContent = '☀️';
@@ -76,7 +75,7 @@
         });
     </script>
         <style>
-            /* Global Review Section Styling */
+         
 html, body, section, nav {
     margin: 0;
     padding: 0;
@@ -95,7 +94,7 @@ nav ul {
 body {
             background-image: url(bg.png);
             background-size: cover;
-            background-repeat: no-repeat;
+            background-repeat: no-repeat;}
 .reviews {
     width: 100%;
     padding: 130px 0 0 0;
@@ -106,7 +105,7 @@ body {
 }
 
 
-/* Heading */
+
 .reviews h1 {
     text-align: center;
     font-size: 42px;
@@ -116,7 +115,7 @@ body {
     font-weight: 700;
 }
 
-/* Reviews Wrapper */
+
 .review_box {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +123,6 @@ body {
     gap: 40px;
 }
 
-/* Each Review Card */
 .review_card {
     background: #2c3e50;
     width: 300px;
@@ -144,7 +142,6 @@ body {
     box-shadow: 0 14px 28px rgba(183, 208, 212, 0.3);
 }
 
-/* Reviewer Image */
 .card_top img {
     width: 85px;
     height: 85px;
@@ -154,7 +151,7 @@ body {
     margin-bottom: 14px;
 }
 
-/* Decorative Quote Icon */
+
 .quote-icon {
     position: absolute;
     right: 20px;
@@ -163,7 +160,7 @@ body {
     color: #d6ccc2;
 }
 
-/* Reviewer Name */
+
 .card_content h2 {
     font-size: 18px;
     font-weight: 600;
@@ -171,14 +168,14 @@ body {
     margin-bottom: 10px;
 }
 
-/* Review Text */
+
 .card_content p {
     font-size: 14px;
     color:white;
     line-height: 1.6;
 }
 
-/* Stars */
+
 .review_icon {
     margin-top: 14px;
 }
@@ -194,7 +191,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Responsive */
+
 @media screen and (max-width: 768px) {
     .review_box {
         flex-direction: column;
@@ -205,7 +202,7 @@ body {
 
         </style>
         <style>
-/* Additional Review Form Styling */
+
 .review-form {
     max-width: 500px;
     margin: 10px auto;
@@ -279,8 +276,8 @@ body {
   margin: 0 auto;
   padding: 0 10px;
   flex-wrap: wrap;
-  padding-top: 0.5rem;         /* Reduced from 1.5rem */
-  padding-bottom: 4px;         /* Reduced from 10px */
+  padding-top: 0.5rem;         
+  padding-bottom: 4px;         
   height: auto;
 }
 
@@ -289,16 +286,16 @@ body {
 }
 
 .footer-title {
-  font-size: 1.15rem;          /* Slightly smaller */
+  font-size: 1.15rem;          
   font-weight: bold;
-  margin-bottom: 2px;          /* Reduced from 4px */
+  margin-bottom: 2px;          
   letter-spacing: 1px;
   color: #fff;
 }
 
 .footer-desc {
-  font-size: 0.95rem;          /* Slightly smaller */
-  line-height: 1.5;            /* Reduced line height */
+  font-size: 0.95rem;          
+  line-height: 1.5;            
   color: #e0e6ed;
   margin-bottom: 0;
 }
@@ -306,17 +303,16 @@ body {
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 8px;                    /* Reduced from 14px */
-  margin-top: 4px;             /* Reduced from 8px */
-}
+  gap: 8px;                    
+  margin-top: 4px;  }           
 
 .footer-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;                 /* Reduced from 48px */
-  height: 36px;                /* Reduced from 48px */
-  font-size: 18px;             /* Reduced from 24px */
+  width: 36px;                 
+  height: 36px;                
+  font-size: 18px;            
   border-radius: 50%;
   color: #fff;
   text-decoration: none;
@@ -345,25 +341,24 @@ body {
 
 .footer-bottom {
   text-align: center;
-  padding: 4px 0 2px 0;        /* Reduced from 8px 0 4px 0 */
-  font-size: 0.85rem;          /* Slightly smaller */
+  padding: 4px 0 2px 0;        
+  font-size: 0.85rem;          
   color: #bfc9d1;
   letter-spacing: 0.5px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 10px;            /* Reduced from 20px */
+  margin-top: 10px;            
 }
 
 @media (max-width: 700px) {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 8px;            /* Reduced from 16px */
-    padding-top: 0.5rem;
+    padding: 0 8px;            
     padding-bottom: 4px;
   }
 
   .footer-social {
-    margin: 8px 0 0 0;        /* Reduced from 16px */
+    margin: 8px 0 0 0;       
     gap: 8px;
   }
 
@@ -545,7 +540,7 @@ body {
 
             let valid = true;
 
-            // Validate email
+           
             if (!validateEmail(email.value.trim())) {
                 showError(email, emailError, 'Please enter a valid email.');
                 valid = false;
@@ -553,7 +548,7 @@ body {
                 hideError(email, emailError);
             }
 
-            // Validate username
+            
             if (username.value.trim().length < 3) {
                 showError(username, usernameError, 'Please enter your username (at least 3 characters).');
                 valid = false;
@@ -561,7 +556,7 @@ body {
                 hideError(username, usernameError);
             }
 
-            // Validate review
+           
             if (review.value.trim().length < 10) {
                 showError(review, reviewError, 'Please enter your review (at least 10 characters).');
                 valid = false;
@@ -569,7 +564,7 @@ body {
                 hideError(review, reviewError);
             }
 
-            // Validate rating
+          
             if (!rating.value) {
                 showError(rating, ratingError, 'Please select a star rating.');
                 valid = false;
