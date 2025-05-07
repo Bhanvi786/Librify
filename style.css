@@ -1090,8 +1090,8 @@ body {
   margin: 0 auto;
   padding: 0 10px;
   flex-wrap: wrap;
-  padding-top: 0.5rem;         /* Reduced from 1.5rem */
-  padding-bottom: 4px;         /* Reduced from 10px */
+  padding-top: 0.5rem;         
+  padding-bottom: 4px;         
   height: auto;
 }
 
@@ -1100,16 +1100,16 @@ body {
 }
 
 .footer-title {
-  font-size: 1.15rem;          /* Slightly smaller */
+  font-size: 1.15rem;          
   font-weight: bold;
-  margin-bottom: 2px;          /* Reduced from 4px */
+  margin-bottom: 2px;          
   letter-spacing: 1px;
   color: #fff;
 }
 
 .footer-desc {
-  font-size: 0.95rem;          /* Slightly smaller */
-  line-height: 1.5;            /* Reduced line height */
+  font-size: 0.95rem;          
+  line-height: 1.5;            
   color: #e0e6ed;
   margin-bottom: 0;
 }
@@ -1117,17 +1117,17 @@ body {
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 8px;                    /* Reduced from 14px */
-  margin-top: 4px;             /* Reduced from 8px */
+  gap: 8px;                    
+  margin-top: 4px;             
 }
 
 .footer-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;                 /* Reduced from 48px */
-  height: 36px;                /* Reduced from 48px */
-  font-size: 18px;             /* Reduced from 24px */
+  width: 36px;                 
+  height: 36px;                
+  font-size: 18px;             
   border-radius: 50%;
   color: #fff;
   text-decoration: none;
@@ -1156,25 +1156,25 @@ body {
 
 .footer-bottom {
   text-align: center;
-  padding: 4px 0 2px 0;        /* Reduced from 8px 0 4px 0 */
-  font-size: 0.85rem;          /* Slightly smaller */
+  padding: 4px 0 2px 0;        
+  font-size: 0.85rem;          
   color: #bfc9d1;
   letter-spacing: 0.5px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 10px;            /* Reduced from 20px */
+  margin-top: 10px;            
 }
 
 @media (max-width: 700px) {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 8px;            /* Reduced from 16px */
+    padding: 0 8px;           
     padding-top: 0.5rem;
     padding-bottom: 4px;
   }
 
   .footer-social {
-    margin: 8px 0 0 0;        /* Reduced from 16px */
+    margin: 8px 0 0 0;        
     gap: 8px;
   }
 

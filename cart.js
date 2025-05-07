@@ -1,5 +1,4 @@
 function addToCart() {
-  // Get book details dynamically from the page
   const titleElem = document.querySelector('.book-title');
   const priceElem = document.querySelector('.price');
   const imgElem = document.querySelector('.book-cover');
@@ -28,7 +27,7 @@ function addToCart() {
 
   localStorage.setItem('data', JSON.stringify(cart));
 
-  // Update cart count badge if present
+  
   const badge = document.getElementById('cartCountBadge');
   if (badge) {
     const totalQuantity = cart.reduce((acc, item) => acc + item.item, 0);
@@ -38,12 +37,11 @@ function addToCart() {
 
   alert(`${title} (x${quantity}) added to cart.`);
 
-  // Redirect to cart.html to show updated cart
   window.location.href = 'cart.html';
 }
 
 function addToWishlist() {
-  // Get book details dynamically from the page
+
   const titleElem = document.querySelector('.book-title');
   const imgElem = document.querySelector('.book-cover');
 
